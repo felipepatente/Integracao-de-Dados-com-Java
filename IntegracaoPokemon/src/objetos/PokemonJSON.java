@@ -9,7 +9,7 @@ public class PokemonJSON {
 	private String peso;
 	private String sexo;
 	private String categoria;
-	private ArrayList<TipoPokemon> tipos;
+	private ArrayList<TipoPokemon> tipos = new ArrayList<TipoPokemon>();
 	
 	public String getNome() {
 		return nome;
