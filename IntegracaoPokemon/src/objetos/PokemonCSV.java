@@ -1,13 +1,15 @@
-package negocios;
+package objetos;
 
 public class PokemonCSV {
 	
 	private String altura;
 	private String categoria;
 	private String descricao;
+	private String evoluide;
 	private String habilidade;
 	private String nome;
 	private String sexo;
+	
 	public String getAltura() {
 		return altura;
 	}
@@ -26,6 +28,15 @@ public class PokemonCSV {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	
+	public String getEvoluide(){
+		return evoluide;
+	}
+	
+	public void setEvoluide(String evoluide){
+		this.evoluide = evoluide;
+	}
+	
 	public String getHabilidade() {
 		return habilidade;
 	}
