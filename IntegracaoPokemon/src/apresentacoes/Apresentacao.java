@@ -112,6 +112,28 @@ public class Apresentacao {
 //			// TODO: handle exception
 //		}
 		
+		//Lendo BD
+		try {
+			
+			ArrayList<PokemonBD> bd = new ArrayList<PokemonBD>();
+			Extracao extracao = new Extracao();
+			PokemonBD pokeBd = new PokemonBD();
+			
+			extracao.lerBancoDados();
+			bd = extracao.getListaBD();
+			
+			
+			for(int i = 0; i < bd.size(); i++){			
+				
+				pokeBd = bd.get(i);								
+				System.out.println(pokeBd.getCategoria() + "\t" + pokeBd.getDescricao() + "\t" + pokeBd.getEvoluiDe()
+				+ "\t" + pokeBd.getNome() + "\t" + pokeBd.getNumero() + "\t" + pokeBd.getSexo());
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 }

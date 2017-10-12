@@ -106,4 +106,8 @@ public class Extracao {
 		return listaXML;
 	}
 	
+	public ArrayList<PokemonBD> getListaBD(){
+		return listaBD;
+	}
+	
 }
