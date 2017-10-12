@@ -62,14 +62,9 @@ public class Extracao {
 		PokemonXML[] poke = xmlMapper.readValue(new File("./pokemon.xml"), PokemonXML[].class);
 			
 		for(int i = 0; i < poke.length; i++){
-			System.out.print(poke[i].getNome() + "\t" + poke[i].getDescricao() + "\t" + poke[i].getCategoria()
-			+ "\t" + poke[i].getPeso()+ "\t");
 			
-			for(int j = 0; j < poke[i].getFraquezas().size(); j++){
-				System.out.print(poke[i].getFraquezas().get(j).getFraqueza()+ "\t");
-			}
-			
-			System.out.println();
+			listaXML.add(new PokemonXML(poke[i].getNome(),poke[i].getDescricao(),poke[i].getPeso(),poke[i].getPeso(),
+					poke[i].getCategoria(),poke[i].getFraquezas()));			
 		}
 	}
 	
