@@ -2,6 +2,9 @@ package apresentacoes;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import objetos.PokemonCSV;
@@ -20,9 +23,22 @@ import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
+import conexoes.Conexao;
+
 public class Apresentacao {
 	
 	public static void main(String[] args){
+		
+		try {
+			
+			Conexao conexao = new Conexao();
+			Connection conn = conexao.getConexao();
+			System.out.println("Correto");
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
 		
 		//Lendo CSV
 //		try {

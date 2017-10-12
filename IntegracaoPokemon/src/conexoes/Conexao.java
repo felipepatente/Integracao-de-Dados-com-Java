@@ -7,7 +7,7 @@ public class Conexao {
 	
 private final String DRIVE = "com.microsoft.sqlserver.jdbc.SQLServerDriver"; 
 	
-	public Connection getConexaoAclimacao () throws Exception {
+	public Connection getConexao() throws Exception {
 		Class.forName(DRIVE);
 		Connection conn = DriverManager.getConnection(
 				"jdbc:sqlserver://pokemons.database.windows.net:1433;"
