@@ -31,7 +31,7 @@ public class Apresentacao {
 //			Extracao extracao = new Extracao();
 //			PokemonCSV pokeCsv = new PokemonCSV();
 //			
-//			extracao.extrairArquivoCSV();
+//			extracao.lerArquivoCSV();
 //			csv = extracao.getListaCSV();
 //			
 //			
