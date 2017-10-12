@@ -77,35 +77,36 @@ public class Apresentacao {
 //		}
 		
 		
-		
-//		System.out.println("Lendo Arquivo XML");
-//		System.out.println("*************************");
-//		
+		//Lendo XML
 //		try {
-//			ObjectMapper xmlMapper = new XmlMapper();
 //			
-//			PokemonXML[] poke = xmlMapper.readValue(new File("./pokemon.xml"), PokemonXML[].class);
+//			ArrayList<PokemonXML> xml = new ArrayList<PokemonXML>();
+//			Extracao extracao = new Extracao();
+//			PokemonXML pokeXml = new PokemonXML();
 //			
-//			for(int i = 0; i < poke.length; i++){
-//				System.out.print(poke[i].getNome() + "\t" + poke[i].getDescricao() + "\t" + poke[i].getCategoria()
-//				+ "\t" + poke[i].getPeso()+ "\t");
+//			extracao.lerArquivoXML();
+//			xml = extracao.getListaXML();
+//			
+//			
+//			for(int i = 0; i < xml.size(); i++){			
 //				
-//				for(int j = 0; j < poke[i].getFraquezas().size(); j++){
-//					System.out.print(poke[i].getFraquezas().get(j).getFraqueza()+ "\t");
+//				pokeXml = xml.get(i);				
+//				
+//				System.out.print(pokeXml.getCategoria() + "\t" + pokeXml.getDescricao() + "\t" + pokeXml.getNome() + "\t"
+//						+ pokeXml.getPeso() + "\t" + pokeXml.getSexo() + "\t");
+//				
+//				for(int j = 0; j < pokeXml.getFraquezas().size(); j++){
+//					System.out.print(pokeXml.getFraquezas().get(j).getFraqueza() + "\t");
 //				}
 //				
 //				System.out.println();
+//								
 //			}
 //			
-//		} catch (JsonProcessingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
+//		} catch (Exception e) {
+//			// TODO: handle exception
 //		}
-//		System.out.println("*************************\n");
-//		
+		
 	}
 
 }
