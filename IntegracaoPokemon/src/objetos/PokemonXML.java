@@ -10,6 +10,20 @@ public class PokemonXML {
 	private String sexo;
 	private String categoria;
 	private ArrayList<Fraqueza> fraquezas = new ArrayList<Fraqueza>();	
+	
+	public PokemonXML(){
+		
+	}
+	
+	public PokemonXML(String nome,String descricao,String peso,String sexo,String categoria,ArrayList<Fraqueza> fraquezas){
+		this.nome = nome;
+		this.descricao = descricao;
+		this.peso = peso;
+		this.sexo = sexo;
+		this.categoria = categoria;
+		this.fraquezas = fraquezas;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
