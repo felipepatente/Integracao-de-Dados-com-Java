@@ -2,11 +2,18 @@ package negocios;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
+import objetos.PokemonBD;
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
+import objetos.PokemonBD;
+
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -17,16 +24,20 @@ import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
+import conexoes.Conexao;
+
 public class Extracao {
 	
 	private ArrayList<PokemonCSV> listaCSV;
 	private ArrayList<PokemonJSON> listaJSON;
 	private ArrayList<PokemonXML> listaXML;
+	private ArrayList<PokemonBD> listaBD;
 	
 	public Extracao(){
 		listaCSV = new ArrayList<PokemonCSV>();
 		listaJSON = new ArrayList<PokemonJSON>();
 		listaXML = new ArrayList<PokemonXML>();
+		listaBD = new ArrayList<PokemonBD>();
 	}
 	
 	public void lerArquivoCSV() throws JsonProcessingException, IOException{
@@ -68,8 +79,19 @@ public class Extracao {
 		}
 	}
 	
-	public void lerBancoDados(){
-		
+	public void lerBancoDados() throws Exception{
+			
+		Conexao conexao = new Conexao();
+		Connection conn = conexao.getConexao();
+		PreparedStatement ps = 
+				conn.prepareStatement("SELECT [Numero Pokedex], Nome, Descrição, Categoria, Sexo, [Evolui De] FROM pokebase;");
+		ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				listaBD.add(new PokemonBD(rs.getString("Numero Pokedex"),rs.getString("Nome"),rs.getString("descrição"),
+						rs.getString("Categoria"),rs.getString("sexo"),rs.getString("Evolui De")));
+			
+			}
 	}
 	
 	public ArrayList<PokemonCSV> getListaCSV(){

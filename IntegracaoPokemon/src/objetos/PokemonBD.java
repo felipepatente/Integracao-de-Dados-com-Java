@@ -8,6 +8,20 @@ public class PokemonBD {
 	private String categoria;
 	private String sexo;
 	private String evoluiDe;
+	
+	public PokemonBD(){
+		
+	}
+	
+	public PokemonBD(String numero, String nome, String descricao, String categoria, String sexo, String evoluiDe){
+		this.numero = numero;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.categoria = categoria;
+		this.sexo = sexo;
+		this.evoluiDe = evoluiDe;
+	}
+	
 	public String getNumero() {
 		return numero;
 	}

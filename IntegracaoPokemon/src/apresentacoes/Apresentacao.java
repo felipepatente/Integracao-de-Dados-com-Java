@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
-
 import negocios.Extracao;
+import objetos.PokemonBD;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -28,17 +28,6 @@ import conexoes.Conexao;
 public class Apresentacao {
 	
 	public static void main(String[] args){
-		
-		try {
-			
-			Conexao conexao = new Conexao();
-			Connection conn = conexao.getConexao();
-			System.out.println("Correto");
-			
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		
 		
 		//Lendo CSV
 //		try {
