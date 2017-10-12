@@ -34,7 +34,13 @@ public class Extracao {
 			
 		while (it.hasNext()) {
 			PokemonCSV csv = it.next();
-			listaCSV.add(csv);			
+			listaCSV.add(csv);
+				
 		}
 	}
+	
+	public ArrayList<PokemonCSV> getListaCSV(){
+		return listaCSV;
+	}
+	
 }
