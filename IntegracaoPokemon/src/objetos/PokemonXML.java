@@ -7,8 +7,9 @@ public class PokemonXML {
 	private String nome;
 	private String descricao;
 	private String peso;
+	private String sexo;
 	private String categoria;
-	private ArrayList<Fraqueza> fraquezas = new ArrayList<Fraqueza>();
+	private ArrayList<Fraqueza> fraquezas = new ArrayList<Fraqueza>();	
 	public String getNome() {
 		return nome;
 	}
@@ -27,6 +28,15 @@ public class PokemonXML {
 	public void setPeso(String peso) {
 		this.peso = peso;
 	}
+	
+	public String getSexo(){
+		return sexo;
+	}
+	
+	public void setSexo(String sexo){
+		this.sexo = sexo;
+	}
+	
 	public String getCategoria() {
 		return categoria;
 	}

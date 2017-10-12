@@ -2,14 +2,14 @@ package objetos;
 
 public class Fraqueza {
 	
-	private String fraquezas;
+	private String fraqueza;
 	
-	public void setNome(String fraquezas){
-		this.fraquezas = fraquezas;
+	public void setFraqueza(String fraqueza){
+		this.fraqueza = fraqueza;
 	}
 	
-	public String getNome(){
-		return fraquezas;
+	public String getFraqueza(){
+		return fraqueza;
 	}
 
 }

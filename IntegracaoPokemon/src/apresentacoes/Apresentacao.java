@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
+import objetos.PokemonXML;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -14,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 public class Apresentacao {
 	
@@ -53,14 +55,14 @@ public class Apresentacao {
 //		System.out.println("*************************");
 //		try {
 //			ObjectMapper mapper = new ObjectMapper();
-//			PokemonJSON[] livro = mapper.readValue(new File("./pokemon.json"), PokemonJSON[].class);
+//			PokemonJSON[] poke = mapper.readValue(new File("./pokemon.json"), PokemonJSON[].class);
 //			
-//			for(int i = 0; i < livro.length; i++){
-//				System.out.print(livro[i].getCategoria() + "\t" + livro[i].getDescricao() + "\t" + livro[i].getNome() + "\t"
-//						+ livro[i].getPeso() + "\t" + livro[i].getSexo() + "\t");
+//			for(int i = 0; i < poke.length; i++){
+//				System.out.print(poke[i].getCategoria() + "\t" + poke[i].getDescricao() + "\t" + poke[i].getNome() + "\t"
+//						+ poke[i].getPeso() + "\t" + poke[i].getSexo() + "\t");
 //				
-//				for(int j = 0; j < livro[i].getTipos().size(); j++){
-//					System.out.print(livro[i].getTipos().get(j).getTipo() + "\t");
+//				for(int j = 0; j < poke[i].getTipos().size(); j++){
+//					System.out.print(poke[i].getTipos().get(j).getTipo() + "\t");
 //				}
 //				System.out.println();
 //			}
@@ -78,8 +80,34 @@ public class Apresentacao {
 //		System.out.println("*************************\n");
 //		
 		
-		
-		
+//		System.out.println("Lendo Arquivo XML");
+//		System.out.println("*************************");
+//		
+//		try {
+//			ObjectMapper xmlMapper = new XmlMapper();
+//			
+//			PokemonXML[] poke = xmlMapper.readValue(new File("./pokemon.xml"), PokemonXML[].class);
+//			
+//			for(int i = 0; i < poke.length; i++){
+//				System.out.print(poke[i].getNome() + "\t" + poke[i].getDescricao() + "\t" + poke[i].getCategoria()
+//				+ "\t" + poke[i].getPeso()+ "\t");
+//				
+//				for(int j = 0; j < poke[i].getFraquezas().size(); j++){
+//					System.out.print(poke[i].getFraquezas().get(j).getFraqueza()+ "\t");
+//				}
+//				
+//				System.out.println();
+//			}
+//			
+//		} catch (JsonProcessingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println("*************************\n");
+//		
 		
 		
 		
