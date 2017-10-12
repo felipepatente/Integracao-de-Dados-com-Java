@@ -44,7 +44,5 @@ public class PokemonBD {
 	public void setEvoluiDe(String evoluiDe) {
 		this.evoluiDe = evoluiDe;
 	}
-	
-	
 
 }
