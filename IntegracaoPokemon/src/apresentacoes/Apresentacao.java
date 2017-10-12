@@ -3,7 +3,6 @@ package apresentacoes;
 import java.io.File;
 import java.io.IOException;
 
-import objetos.LivroJSON;
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 
@@ -32,10 +31,12 @@ public class Apresentacao {
 //			CsvSchema schema = CsvSchema.emptySchema().withColumnSeparator(';').withHeader().withoutQuoteChar();
 //			File csvFile = new File("./pokebase.csv"); 
 //			MappingIterator<PokemonCSV> it = mapper.readerFor(PokemonCSV.class).with(schema).readValues(csvFile);
+//			
 //			while (it.hasNext()) {
 //				PokemonCSV csv = it.next();
 //				System.out.println(csv.getAltura() + "\t" + csv.getCategoria() + "\t" + csv.getDescricao() + "\t" + 
-//				csv.getHabilidade() + "\t" + csv.getNome() + "\t" + csv.getSexo());			
+//				csv.getHabilidade() + "\t" + csv.getNome() + "\t" + csv.getSexo());
+//				
 //			}
 //		} catch (JsonProcessingException e) {
 //			// TODO Auto-generated catch block
@@ -48,33 +49,48 @@ public class Apresentacao {
 		
 		
 		
-		System.out.println("Lendo Arquivo JSON");
-		System.out.println("*************************");
-		try {
-			ObjectMapper mapper = new ObjectMapper();
-			PokemonJSON[] livro = mapper.readValue(new File("./pokemon.json"), PokemonJSON[].class);
-			
-			for(int i = 0; i < livro.length; i++){
-				System.out.print(livro[i].getCategoria() + "\t" + livro[i].getDescricao() + "\t" + livro[i].getNome() + "\t"
-						+ livro[i].getPeso() + "\t" + livro[i].getSexo() + "\t");
-				
-				for(int j = 0; j < livro[i].getTipos().size(); j++){
-					System.out.print(livro[i].getTipos().get(j).getTipo() + "\t");
-				}
-				System.out.println();
-			}
-			
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("*************************\n");
+//		System.out.println("Lendo Arquivo JSON");
+//		System.out.println("*************************");
+//		try {
+//			ObjectMapper mapper = new ObjectMapper();
+//			PokemonJSON[] livro = mapper.readValue(new File("./pokemon.json"), PokemonJSON[].class);
+//			
+//			for(int i = 0; i < livro.length; i++){
+//				System.out.print(livro[i].getCategoria() + "\t" + livro[i].getDescricao() + "\t" + livro[i].getNome() + "\t"
+//						+ livro[i].getPeso() + "\t" + livro[i].getSexo() + "\t");
+//				
+//				for(int j = 0; j < livro[i].getTipos().size(); j++){
+//					System.out.print(livro[i].getTipos().get(j).getTipo() + "\t");
+//				}
+//				System.out.println();
+//			}
+//			
+//		} catch (JsonParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (JsonMappingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println("*************************\n");
+//		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
