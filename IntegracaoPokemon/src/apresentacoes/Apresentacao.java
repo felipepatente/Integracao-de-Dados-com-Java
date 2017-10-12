@@ -46,6 +46,35 @@ public class Apresentacao {
 //			System.out.println(e.getMessage());
 //		}
 		
+		try {
+			
+			ArrayList<PokemonJSON> json = new ArrayList<PokemonJSON>();
+			Extracao extracao = new Extracao();
+			PokemonJSON pokeJson = new PokemonJSON();
+			
+			extracao.lerArquivoJSON();
+			json = extracao.getListaJSON();
+			
+			
+			for(int i = 0; i < json.size(); i++){			
+				
+				pokeJson = json.get(i);				
+				
+				System.out.print(pokeJson.getCategoria() + "\t" + pokeJson.getDescricao() + "\t" + pokeJson.getNome() + "\t"
+						+ pokeJson.getPeso() + "\t" + pokeJson.getSexo() + "\t");
+					
+				for(int j = 0; j < pokeJson.getTipos().size(); j++){
+					System.out.print(pokeJson.getTipos().get(j).getTipo() + "\t");
+				}
+				
+				System.out.println();
+								
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 		
 //		System.out.println("Lendo Arquivo JSON");
 //		System.out.println("*************************");
