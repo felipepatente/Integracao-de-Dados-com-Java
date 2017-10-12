@@ -2,10 +2,13 @@ package apresentacoes;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
+
+import negocios.Extracao;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -21,35 +24,27 @@ public class Apresentacao {
 	
 	public static void main(String[] args){
 		
-		
-		
-		//exemplo de leitura de CSV
-//		System.out.println("Lendo Arquivo CSV");
-//		System.out.println("*************************");
+		//Lendo CSV
 //		try {
-//			CsvMapper mapper = new CsvMapper();			
-//			mapper.enable(CsvParser.Feature.WRAP_AS_ARRAY);
-//
-//
-//			CsvSchema schema = CsvSchema.emptySchema().withColumnSeparator(';').withHeader().withoutQuoteChar();
-//			File csvFile = new File("./pokebase.csv"); 
-//			MappingIterator<PokemonCSV> it = mapper.readerFor(PokemonCSV.class).with(schema).readValues(csvFile);
 //			
-//			while (it.hasNext()) {
-//				PokemonCSV csv = it.next();
-//				System.out.println(csv.getAltura() + "\t" + csv.getCategoria() + "\t" + csv.getDescricao() + "\t" + 
-//				csv.getHabilidade() + "\t" + csv.getNome() + "\t" + csv.getSexo());
+//			ArrayList<PokemonCSV> csv = new ArrayList<PokemonCSV>();
+//			Extracao extracao = new Extracao();
+//			PokemonCSV pokeCsv = new PokemonCSV();
+//			
+//			extracao.extrairArquivoCSV();
+//			csv = extracao.getListaCSV();
+//			
+//			
+//			for(int i = 0; i < csv.size(); i++){			
 //				
+//				pokeCsv = csv.get(i);				
+//				System.out.println(pokeCsv.getAltura() + "\t" + pokeCsv.getCategoria() + "\t" + pokeCsv.getDescricao() + "\t" + 
+//						pokeCsv.getHabilidade() + "\t" + pokeCsv.getNome() + "\t" + pokeCsv.getSexo());				
 //			}
-//		} catch (JsonProcessingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
+//			
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
 //		}
-//		System.out.println("*************************\n");
-		
 		
 		
 //		System.out.println("Lendo Arquivo JSON");
