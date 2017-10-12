@@ -68,6 +68,10 @@ public class Extracao {
 		}
 	}
 	
+	public void lerBancoDados(){
+		
+	}
+	
 	public ArrayList<PokemonCSV> getListaCSV(){
 		return listaCSV;
 	}
