@@ -47,13 +47,8 @@ public class Extracao {
 		PokemonJSON[] poke = mapper.readValue(new File("./pokemon.json"), PokemonJSON[].class);
 			
 		for(int i = 0; i < poke.length; i++){
-			System.out.print(poke[i].getCategoria() + "\t" + poke[i].getDescricao() + "\t" + poke[i].getNome() + "\t"
-					+ poke[i].getPeso() + "\t" + poke[i].getSexo() + "\t");
-				
-			for(int j = 0; j < poke[i].getTipos().size(); j++){
-				System.out.print(poke[i].getTipos().get(j).getTipo() + "\t");
-			}
-			System.out.println();
+			listaJSON.add(new PokemonJSON(poke[i].getNome(),poke[i].getDescricao(),poke[i].getPeso(),poke[i].getSexo(),
+					poke[i].getCategoria(),poke[i].getTipos()));			
 		}
 		
 	}

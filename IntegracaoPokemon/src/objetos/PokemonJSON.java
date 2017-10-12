@@ -11,6 +11,19 @@ public class PokemonJSON {
 	private String categoria;
 	private ArrayList<TipoPokemon> tipos = new ArrayList<TipoPokemon>();
 	
+	public PokemonJSON(){
+		
+	}
+	
+	public PokemonJSON(String nome,String descricao,String peso,String sexo,String categoria,ArrayList<TipoPokemon> tipos ){
+		this.nome = nome;
+		this.descricao = descricao;
+		this.peso = peso;
+		this.sexo = sexo;
+		this.categoria = categoria;
+		this.tipos = tipos;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
