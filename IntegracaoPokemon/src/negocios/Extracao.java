@@ -15,15 +15,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 public class Extracao {
 	
 	private ArrayList<PokemonCSV> listaCSV;
 	private ArrayList<PokemonJSON> listaJSON;
+	private ArrayList<PokemonXML> listaXML;
 	
 	public Extracao(){
 		listaCSV = new ArrayList<PokemonCSV>();
 		listaJSON = new ArrayList<PokemonJSON>();
+		listaXML = new ArrayList<PokemonXML>();
 	}
 	
 	public void lerArquivoCSV() throws JsonProcessingException, IOException{
@@ -53,12 +56,33 @@ public class Extracao {
 		
 	}
 	
+	public void lerArquivoXML() throws JsonParseException, JsonMappingException, IOException{
+	
+		ObjectMapper xmlMapper = new XmlMapper();
+		PokemonXML[] poke = xmlMapper.readValue(new File("./pokemon.xml"), PokemonXML[].class);
+			
+		for(int i = 0; i < poke.length; i++){
+			System.out.print(poke[i].getNome() + "\t" + poke[i].getDescricao() + "\t" + poke[i].getCategoria()
+			+ "\t" + poke[i].getPeso()+ "\t");
+			
+			for(int j = 0; j < poke[i].getFraquezas().size(); j++){
+				System.out.print(poke[i].getFraquezas().get(j).getFraqueza()+ "\t");
+			}
+			
+			System.out.println();
+		}
+	}
+	
 	public ArrayList<PokemonCSV> getListaCSV(){
 		return listaCSV;
 	}
 	
 	public ArrayList<PokemonJSON> getListaJSON(){
 		return listaJSON;
+	}
+	
+	public ArrayList<PokemonXML> getListaXML(){
+		return listaXML;
 	}
 	
 }

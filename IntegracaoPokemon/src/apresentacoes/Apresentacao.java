@@ -46,64 +46,37 @@ public class Apresentacao {
 //			System.out.println(e.getMessage());
 //		}
 		
-		try {
-			
-			ArrayList<PokemonJSON> json = new ArrayList<PokemonJSON>();
-			Extracao extracao = new Extracao();
-			PokemonJSON pokeJson = new PokemonJSON();
-			
-			extracao.lerArquivoJSON();
-			json = extracao.getListaJSON();
-			
-			
-			for(int i = 0; i < json.size(); i++){			
-				
-				pokeJson = json.get(i);				
-				
-				System.out.print(pokeJson.getCategoria() + "\t" + pokeJson.getDescricao() + "\t" + pokeJson.getNome() + "\t"
-						+ pokeJson.getPeso() + "\t" + pokeJson.getSexo() + "\t");
-					
-				for(int j = 0; j < pokeJson.getTipos().size(); j++){
-					System.out.print(pokeJson.getTipos().get(j).getTipo() + "\t");
-				}
-				
-				System.out.println();
-								
-			}
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		
-		
-//		System.out.println("Lendo Arquivo JSON");
-//		System.out.println("*************************");
+		//Lendo JSON
 //		try {
-//			ObjectMapper mapper = new ObjectMapper();
-//			PokemonJSON[] poke = mapper.readValue(new File("./pokemon.json"), PokemonJSON[].class);
 //			
-//			for(int i = 0; i < poke.length; i++){
-//				System.out.print(poke[i].getCategoria() + "\t" + poke[i].getDescricao() + "\t" + poke[i].getNome() + "\t"
-//						+ poke[i].getPeso() + "\t" + poke[i].getSexo() + "\t");
+//			ArrayList<PokemonJSON> json = new ArrayList<PokemonJSON>();
+//			Extracao extracao = new Extracao();
+//			PokemonJSON pokeJson = new PokemonJSON();
+//			
+//			extracao.lerArquivoJSON();
+//			json = extracao.getListaJSON();
+//			
+//			
+//			for(int i = 0; i < json.size(); i++){			
 //				
-//				for(int j = 0; j < poke[i].getTipos().size(); j++){
-//					System.out.print(poke[i].getTipos().get(j).getTipo() + "\t");
+//				pokeJson = json.get(i);				
+//				
+//				System.out.print(pokeJson.getCategoria() + "\t" + pokeJson.getDescricao() + "\t" + pokeJson.getNome() + "\t"
+//						+ pokeJson.getPeso() + "\t" + pokeJson.getSexo() + "\t");
+//					
+//				for(int j = 0; j < pokeJson.getTipos().size(); j++){
+//					System.out.print(pokeJson.getTipos().get(j).getTipo() + "\t");
 //				}
+//				
 //				System.out.println();
+//								
 //			}
 //			
-//		} catch (JsonParseException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (JsonMappingException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
+//		} catch (Exception e) {
+//			// TODO: handle exception
 //		}
-//		System.out.println("*************************\n");
-//		
+		
+		
 		
 //		System.out.println("Lendo Arquivo XML");
 //		System.out.println("*************************");
