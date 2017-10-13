@@ -38,14 +38,17 @@ public class Apresentacao {
 		ext.lerArquivoXML();
 		ext.lerArquivoJSON();
 		ext.lerArquivoCSV();
+		ext.lerBancoDados();
 		
 		ArrayList<PokemonXML> listaXML =  ext.getListaXML();
 		ArrayList<PokemonJSON> listaJSON =  ext.getListaJSON();
 		ArrayList<PokemonCSV> listaCSV =  ext.getListaCSV();
+		ArrayList<PokemonBD> listaBD =  ext.getListaBD();
 		
 		trans.getDadosXMLToPokemon(listaXML);
 		trans.getDadosJSONToPokemon(listaJSON);
 		trans.getDadosCSVToPokemon(listaCSV);
+		trans.getDadosBDToPokemon(listaBD);
 		
 		ArrayList<Pokemon> listaPoke =  trans.getListaPokemon();
 		
@@ -53,12 +56,11 @@ public class Apresentacao {
 		
 		for(int i = 0; i < listaPoke.size(); i++){
 			
-			System.out.println(i + ", \n" + listaPoke.get(i).getAltura() + "\n" + listaPoke.get(i).getEvoluiDe()
-					+ "\n" + listaPoke.get(i).getHabilidade() + "\n \n");
+			System.out.println(listaPoke.get(i).getNumeroPokedex());
 			
 		}
 		
-		trans.inserirPokemon();
+		//trans.inserirPokemon();
 
 		
 		System.out.println("Acabou");

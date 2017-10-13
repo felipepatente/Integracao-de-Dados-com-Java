@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import conexoes.Conexao;
 import objetos.Fraqueza;
 import objetos.Pokemon;
+import objetos.PokemonBD;
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
@@ -59,6 +60,14 @@ public class Transformacao {
 			listaPokemon.get(i).setAltura(listaCSV.get(i).getAltura());
 			listaPokemon.get(i).setEvoluiDe(listaCSV.get(i).getEvoluide());
 			listaPokemon.get(i).setHabilidade(listaCSV.get(i).getHabilidade());			
+		}		
+	}
+	
+	public void getDadosBDToPokemon(ArrayList<PokemonBD> listaBD){
+		
+		PokemonJSON pokeJSON = new PokemonJSON();		
+		for(int i = 0; i < listaBD.size(); i++){			
+			listaPokemon.get(i).setNumeroPokedex(listaBD.get(i).getNumero());			
 		}		
 	}
 	
