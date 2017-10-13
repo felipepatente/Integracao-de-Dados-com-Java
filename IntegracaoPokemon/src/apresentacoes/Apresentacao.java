@@ -60,7 +60,7 @@ public class Apresentacao {
 			
 		}
 		
-		//trans.inserirPokemon();
+		trans.inserirPokemon();
 
 		
 		System.out.println("Acabou");

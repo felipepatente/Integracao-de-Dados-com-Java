@@ -81,8 +81,8 @@ public class Transformacao {
 		PreparedStatement prepare;
 		Connection conn = conexao.getConexao();
 		
-		String sql = "INSERT INTO Pokemons (nome,descricao,peso,sexo,categoria,fraquezas,tipos,altura,evoluiDe,habilidade)"
-				+ " VALUES(?,?,?,?,?,?,?,?,?,?);";	
+		String sql = "INSERT INTO Pokemons (nome,descricao,peso,sexo,categoria,fraquezas,tipos,altura,evoluiDe,habilidade,numeroPokedex)"
+				+ " VALUES(?,?,?,?,?,?,?,?,?,?,?);";	
 		String aux = "";
 		
 		for (int i=0; i< listaPokemon.size(); i++) {
@@ -120,6 +120,7 @@ public class Transformacao {
 			prepare.setString(8, p.getAltura());
 			prepare.setString(9, p.getEvoluiDe());
 			prepare.setString(10, p.getHabilidade());
+			prepare.setString(11, p.getNumeroPokedex());
 			
 			prepare.executeUpdate();
 			
