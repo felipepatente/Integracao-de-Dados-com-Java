@@ -51,6 +51,16 @@ public class Transformacao {
 		
 	}
 	
+	public void getDadosCSVToPokemon(ArrayList<PokemonCSV> listaCSV){
+		
+		PokemonJSON pokeJSON = new PokemonJSON();
+		
+		for(int i = 0; i < listaCSV.size(); i++){			
+			listaPokemon.get(i).setAltura(listaCSV.get(i).getAltura());
+			listaPokemon.get(i).setEvoluiDe(listaCSV.get(i).getEvoluide());
+			listaPokemon.get(i).setHabilidade(listaCSV.get(i).getHabilidade());			
+		}		
+	}
 	
 	public ArrayList<Pokemon> getListaPokemon(){
 		return listaPokemon;
