@@ -11,6 +11,8 @@ import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
 import negocios.Extracao;
+import negocios.Transformacao;
+import objetos.Pokemon;
 import objetos.PokemonBD;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -27,9 +29,33 @@ import conexoes.Conexao;
 
 public class Apresentacao {
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException{
 		
-				
+		Extracao ext = new Extracao();
+		Transformacao trans = new Transformacao();
+		
+		ext.lerArquivoXML();
+		ArrayList<PokemonXML> listaXML =  ext.getListaXML();
+		trans.getDadosXMLToPokemon(listaXML);
+		ArrayList<Pokemon> listaPoke =  trans.getListaPokemon();
+		Pokemon poke = new Pokemon();
+		
+//		for(int i = 0; i < listaPoke.size(); i++){
+//			
+//			poke = ;
+//			System.out.println(listaPoke.get(i).getNome());
+//		}
+		
+		trans.imprimir();
+		
+		System.out.println("Acabou");
+		
+//		PokemonXML xml = new PokemonXML();
+//		
+//		for(int i = 0; i < listaXML.size(); i++){
+//			xml = listaXML.get(i);
+//			System.out.println(xml.getNome());
+//		}
 	}
 
 }

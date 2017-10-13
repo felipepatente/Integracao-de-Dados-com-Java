@@ -1,5 +1,7 @@
 package objetos;
 
+import java.util.ArrayList;
+
 public class Pokemon {
 	
 	private String numeroPokedex;
@@ -10,7 +12,7 @@ public class Pokemon {
 	private String evoluiDe;
 	private String peso;
 	private String tipos;
-	private String fraquezas;
+	private ArrayList<Fraqueza> fraquezas;
 	private String altura;
 	private String habilidade;
 	public String getNumeroPokedex() {
@@ -61,10 +63,10 @@ public class Pokemon {
 	public void setTipos(String tipos) {
 		this.tipos = tipos;
 	}
-	public String getFraquezas() {
+	public ArrayList<Fraqueza> getFraquezas() {
 		return fraquezas;
 	}
-	public void setFraquezas(String fraquezas) {
+	public void setFraquezas(ArrayList<Fraqueza> fraquezas) {
 		this.fraquezas = fraquezas;
 	}
 	public String getAltura() {
