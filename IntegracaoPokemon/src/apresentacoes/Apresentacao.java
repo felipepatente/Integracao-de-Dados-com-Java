@@ -2,6 +2,7 @@ package apresentacoes;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.SocketTimeoutException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,18 +36,33 @@ public class Apresentacao {
 		Transformacao trans = new Transformacao();
 		
 		ext.lerArquivoXML();
+		ext.lerArquivoJSON();
+		
 		ArrayList<PokemonXML> listaXML =  ext.getListaXML();
+		ArrayList<PokemonJSON> listaJSON =  ext.getListaJSON();
+		
 		trans.getDadosXMLToPokemon(listaXML);
+		trans.getDadosJSONToPokemon(listaJSON);
+		
 		ArrayList<Pokemon> listaPoke =  trans.getListaPokemon();
+		
 		Pokemon poke = new Pokemon();
 		
-//		for(int i = 0; i < listaPoke.size(); i++){
-//			
-//			poke = listaPoke.get(i);
-//			System.out.println(listaPoke.get(i).getCategoria());
-//		}
+		for(int i = 0; i < listaPoke.size(); i++){
+			
+			System.out.print(i + " " + listaPoke.get(i).getNome() + " ");
+			
+			for(int j = 0; j < listaPoke.get(i).getTipos().size(); j++){
+				System.out.print(listaPoke.get(i).getTipos().get(j).getTipo());
+			}
+			
+			System.out.println();
+			
+		}
 		
 		trans.inserirPokemon();
+
+		
 		System.out.println("Acabou");
 		
 	}

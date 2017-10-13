@@ -14,6 +14,8 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import conexoes.Conexao;
 import objetos.Fraqueza;
 import objetos.Pokemon;
+import objetos.PokemonCSV;
+import objetos.PokemonJSON;
 import objetos.PokemonXML;
 
 public class Transformacao {
@@ -38,6 +40,18 @@ public class Transformacao {
 		
 	}
 	
+	
+	public void getDadosJSONToPokemon(ArrayList<PokemonJSON> listaJSON){
+		
+		PokemonJSON pokeJSON = new PokemonJSON();
+		
+		for(int i = 0; i < listaJSON.size(); i++){			
+			listaPokemon.get(i).setTipos(listaJSON.get(i).getTipos());
+		}
+		
+	}
+	
+	
 	public ArrayList<Pokemon> getListaPokemon(){
 		return listaPokemon;
 	}
@@ -48,14 +62,14 @@ public class Transformacao {
 		PreparedStatement prepare;
 		Connection conn = conexao.getConexao();
 		
-		String sql = "INSERT INTO Pokemons (nome,descricao,peso,sexo,categoria,fraquezas)"
-				+ " VALUES(?,?,?,?,?,?);";	
-		String fraq = "";
+		String sql = "INSERT INTO Pokemons (nome,descricao,peso,sexo,categoria,fraquezas,tipos)"
+				+ " VALUES(?,?,?,?,?,?,?);";	
+		String aux = "";
 		
 		for (int i=0; i< listaPokemon.size(); i++) {
 			
 			Pokemon p = listaPokemon.get(i);
-			fraq = "";
+			aux = "";
 			
 			prepare = conn.prepareStatement(sql);
 			prepare.setString(1, p.getNome());
@@ -65,26 +79,30 @@ public class Transformacao {
 			prepare.setString(5, p.getCategoria());
 			
 			for(int j = 0; j < p.getFraquezas().size(); j++){
-				fraq += p.getFraquezas().get(j).getFraqueza();
+				aux += p.getFraquezas().get(j).getFraqueza();
 				
 				if(j < p.getFraquezas().size() - 1){
-					fraq += ";";
+					aux += ";";
 				}
 			}
 			
-			prepare.setString(6, fraq);			
+			prepare.setString(6, aux);
+			
+			aux = "";
+			for(int j = 0; j < p.getTipos().size(); j++){
+				aux += p.getTipos().get(j).getTipo();
+				
+				if(j < p.getTipos().size() - 1){
+					aux += ";";
+				}
+			}
+			
+			prepare.setString(7, aux);
+			
 			prepare.executeUpdate();
 			
 		}	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }
