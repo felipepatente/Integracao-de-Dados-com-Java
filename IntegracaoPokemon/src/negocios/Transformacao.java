@@ -2,11 +2,17 @@ package negocios;
 
 import java.io.IOException;
 import java.net.SocketTimeoutException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
+import conexoes.Conexao;
+import objetos.Fraqueza;
 import objetos.Pokemon;
 import objetos.PokemonXML;
 
@@ -25,14 +31,9 @@ public class Transformacao {
 		
 		for(int i = 0; i < listaXML.size(); i++){
 			
-			pokeXML = listaXML.get(i);
-			poke.setNome(pokeXML.getNome());
-			poke.setDescricao(pokeXML.getDescricao());
-			poke.setPeso(pokeXML.getPeso());
-			poke.setSexo(pokeXML.getSexo());
-			poke.setCategoria(pokeXML.getCategoria());
-			poke.setFraquezas(pokeXML.getFraquezas());
-			listaPokemon.add(poke);			
+			pokeXML = listaXML.get(i);		
+			listaPokemon.add(new Pokemon(pokeXML.getNome(),pokeXML.getDescricao(),pokeXML.getPeso(),pokeXML.getSexo(),
+					pokeXML.getCategoria(),pokeXML.getFraquezas()));			
 		}
 		
 	}
@@ -41,10 +42,49 @@ public class Transformacao {
 		return listaPokemon;
 	}
 	
-	public void imprimir() throws JsonParseException, JsonMappingException, IOException{
+	public void inserirPokemon() throws Exception{
+	
+		Conexao conexao = new Conexao();
+		PreparedStatement prepare;
+		Connection conn = conexao.getConexao();
 		
-		for(int i = 0; i < listaPokemon.size(); i++){			
-			System.out.println(listaPokemon.get(i).getNome() + "\t" + listaPokemon.get(i).getCategoria());
-		}
+		String sql = "INSERT INTO Pokemons (nome,descricao,peso,sexo,categoria,fraquezas)"
+				+ " VALUES(?,?,?,?,?,?);";	
+		String fraq = "";
+		
+		for (int i=0; i< listaPokemon.size(); i++) {
+			
+			Pokemon p = listaPokemon.get(i);
+			fraq = "";
+			
+			prepare = conn.prepareStatement(sql);
+			prepare.setString(1, p.getNome());
+			prepare.setString(2, p.getDescricao());
+			prepare.setString(3, p.getPeso());
+			prepare.setString(4, p.getSexo());
+			prepare.setString(5, p.getCategoria());
+			
+			for(int j = 0; j < p.getFraquezas().size(); j++){
+				fraq += p.getFraquezas().get(j).getFraqueza();
+				
+				if(j < p.getFraquezas().size() - 1){
+					fraq += ";";
+				}
+			}
+			
+			prepare.setString(6, fraq);			
+			prepare.executeUpdate();
+			
+		}	
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

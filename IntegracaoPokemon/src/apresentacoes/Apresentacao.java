@@ -29,7 +29,7 @@ import conexoes.Conexao;
 
 public class Apresentacao {
 	
-	public static void main(String[] args) throws JsonParseException, JsonMappingException, IOException{
+	public static void main(String[] args) throws Exception{
 		
 		Extracao ext = new Extracao();
 		Transformacao trans = new Transformacao();
@@ -42,20 +42,13 @@ public class Apresentacao {
 		
 //		for(int i = 0; i < listaPoke.size(); i++){
 //			
-//			poke = ;
-//			System.out.println(listaPoke.get(i).getNome());
+//			poke = listaPoke.get(i);
+//			System.out.println(listaPoke.get(i).getCategoria());
 //		}
 		
-		trans.imprimir();
-		
+		trans.inserirPokemon();
 		System.out.println("Acabou");
 		
-//		PokemonXML xml = new PokemonXML();
-//		
-//		for(int i = 0; i < listaXML.size(); i++){
-//			xml = listaXML.get(i);
-//			System.out.println(xml.getNome());
-//		}
 	}
 
 }

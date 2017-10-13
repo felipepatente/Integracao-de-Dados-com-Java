@@ -15,6 +15,20 @@ public class Pokemon {
 	private ArrayList<Fraqueza> fraquezas;
 	private String altura;
 	private String habilidade;
+	
+	public Pokemon(){
+		
+	}
+	
+	public Pokemon(String nome, String descricao, String peso, String sexo, String categoria, ArrayList<Fraqueza> fraquezas){
+		this.nome = nome;
+		this.descricao = descricao;
+		this.peso = peso;
+		this.sexo = sexo;
+		this.categoria = categoria;
+		this.fraquezas = fraquezas;
+	}
+	
 	public String getNumeroPokedex() {
 		return numeroPokedex;
 	}
