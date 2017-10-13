@@ -18,4 +18,8 @@ public class Transformacao {
 		
 		
 	}
+	
+	public ArrayList<Pokemon> getListaPokemon(){
+		return listaPokemon;
+	}
 }
