@@ -11,7 +11,7 @@ public class Pokemon {
 	private String sexo;
 	private String evoluiDe;
 	private String peso;
-	private String tipos;
+	private ArrayList<TipoPokemon> tipos;
 	private ArrayList<Fraqueza> fraquezas;
 	private String altura;
 	private String habilidade;
@@ -71,10 +71,10 @@ public class Pokemon {
 	public void setPeso(String peso) {
 		this.peso = peso;
 	}
-	public String getTipos() {
+	public ArrayList<TipoPokemon> getTipos() {
 		return tipos;
 	}
-	public void setTipos(String tipos) {
+	public void setTipos(ArrayList<TipoPokemon> tipos) {
 		this.tipos = tipos;
 	}
 	public ArrayList<Fraqueza> getFraquezas() {
