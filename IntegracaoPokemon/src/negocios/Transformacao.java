@@ -15,7 +15,20 @@ public class Transformacao {
 	
 	public void transformarXML(ArrayList<PokemonXML> listaXML){
 		
+		PokemonXML pokeXML = new PokemonXML();
+		Pokemon poke = new Pokemon();
 		
+		for(int i = 0; i < listaXML.size(); i++){
+			
+			pokeXML = listaXML.get(i);
+			poke.setNome(pokeXML.getNome());
+			poke.setDescricao(pokeXML.getDescricao());
+			poke.setPeso(poke.getPeso());
+			poke.setSexo(poke.getSexo());
+			poke.setCategoria(poke.getCategoria());
+			poke.setFraquezas(poke.getFraquezas());
+			listaPokemon.add(poke);
+		}
 		
 	}
 	
