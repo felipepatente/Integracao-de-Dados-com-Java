@@ -259,6 +259,7 @@ public class Transformacao {
 		Pokemon pokemon = new Pokemon();
 		ArrayList<Categoria> listaCategoria = this.getListaCategoria();
 		int codPokemon = 0;
+		float aux = 0f;
 		int codCategoria = 0;
 		
 		for(int i = 0; i < listaPokemon.size(); i++){
@@ -271,40 +272,16 @@ public class Transformacao {
 				}							
 			}
 			pokemon = listaPokemon.get(i);
-			codPokemon = this.GetEvolucao(pokemon);
 			
-			if(codPokemon == 0){
-				listaPokemon.get(i).setEvoluiDe("Não tem");
-			}
+			aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
+			codPokemon = (int) aux;
 			
-			
+			listaPoke.add(new bdPokemon(codPokemon, listaPokemon.get(i).getNome(), listaPokemon.get(i).getDescricao(), 
+					listaPokemon.get(i).getAltura(), listaPokemon.get(i).getPeso(), listaPokemon.get(i).getSexo(), 
+					codCategoria, GetEvolucao(pokemon)));
 		}
 		
 		return listaPoke;
-	}
-	
-	public int GetEvolucao(){
-		
-		int numeroPokemon = 0;
-		float aux = 0f;
-		
-		for(int i = 0; i < listaPokemon.size(); i++){
-			
-			if(!(listaPokemon.get(i).getEvoluiDe().equals(""))){
-
-				for(int j = 0; j < listaPokemon.size(); j++){
-					
-					if(listaPokemon.get(i).getEvoluiDe().equals(listaPokemon.get(j).getNome())){												
-						aux = Float.parseFloat(listaPokemon.get(j).getNumeroPokedex());
-						numeroPokemon = (int) aux;
-						return numeroPokemon;
-					}
-					
-				}
-			}			
-		}
-		
-		return numeroPokemon;
 	}
 	
 	private int GetEvolucao(Pokemon pokemon){

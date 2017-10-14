@@ -60,14 +60,22 @@ public class Apresentacao {
 		ArrayList<Habilidade> listaHabilidade = trans.getListaHabilidade();
 		ArrayList<Sexo> listaSexo = trans.getListaSexo();
 		ArrayList<Tipo> listaTipo = trans.getListaTipo();
-		//ArrayList<bdPokemon> listaPoke = trans.getListaPokemonbd();
-		trans.GetEvolucao();
+		ArrayList<bdPokemon> listaPoke = trans.getListaPokemonbd();
 		
-//		System.out.println(listaCategoria.size());
-//		for(int i = 0; i < listaCategoria.size(); i++){
-//			
-//			System.out.println(listaCategoria.get(i).getNmCategoria());			
-//		}
+		
+		System.out.println(listaPoke.size());
+		for(int i = 0; i < listaPoke.size(); i++){			
+			System.out.println(listaPoke.get(i).getNome() + " " + listaPoke.get(i).getCodCategoria());			
+		}
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("Tabela Categoria");
+		for(int i = 0; i < listaCategoria.size(); i++){
+			System.out.println( listaCategoria.get(i).getCodCategoria() + " " + listaCategoria.get(i).getNmCategoria());
+		}
 		
 		//trans.inserirPokemon();
 
