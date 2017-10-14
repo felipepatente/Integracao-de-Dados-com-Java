@@ -14,10 +14,12 @@ import objetos.PokemonXML;
 import objetos.Sexo;
 import objetos.Tipo;
 import objetos.bdPokemon;
+import objetos.bdTipoPokemon;
 import negocios.Extracao;
 import negocios.Transformacao;
 import objetos.Categoria;
 import objetos.Habilidade;
+import objetos.HabilidadePokemon;
 import objetos.Pokemon;
 import objetos.PokemonBD;
 
@@ -61,20 +63,14 @@ public class Apresentacao {
 		ArrayList<Sexo> listaSexo = trans.getListaSexo();
 		ArrayList<Tipo> listaTipo = trans.getListaTipo();
 		ArrayList<bdPokemon> listaPoke = trans.getListaPokemonbd();
+		ArrayList<HabilidadePokemon> listaHabPoke = trans.getListaHabPoke();		
+		//Depois Ajustar
+		ArrayList<bdTipoPokemon> listaTpPoke = trans.getListaFraqueza();
+		ArrayList<bdTipoPokemon> listaTpPokem = trans.getListaTipoPokemon();
 		
-		
-		System.out.println(listaPoke.size());
-		for(int i = 0; i < listaPoke.size(); i++){			
-			System.out.println(listaPoke.get(i).getNome() + " " + listaPoke.get(i).getCodCategoria());			
-		}
-		
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println("Tabela Categoria");
-		for(int i = 0; i < listaCategoria.size(); i++){
-			System.out.println( listaCategoria.get(i).getCodCategoria() + " " + listaCategoria.get(i).getNmCategoria());
+
+		for(int i = 0; i < listaTpPokem.size(); i++){			
+			System.out.println(listaTpPokem.get(i).getCodPokemon()+ " - " + listaTpPokem.get(i).getCodTipo());			
 		}
 		
 		//trans.inserirPokemon();

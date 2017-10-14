@@ -17,6 +17,7 @@ import conexoes.Conexao;
 import objetos.Categoria;
 import objetos.Fraqueza;
 import objetos.Habilidade;
+import objetos.HabilidadePokemon;
 import objetos.Pokemon;
 import objetos.PokemonBD;
 import objetos.PokemonCSV;
@@ -24,7 +25,10 @@ import objetos.PokemonJSON;
 import objetos.PokemonXML;
 import objetos.Sexo;
 import objetos.Tipo;
+import objetos.TipoPokemon;
+import objetos.bdFraqueza;
 import objetos.bdPokemon;
+import objetos.bdTipoPokemon;
 
 public class Transformacao {
 	
@@ -173,20 +177,21 @@ public class Transformacao {
 		for(int i = 0; i < listaPokemon.size(); i++){
 			
 			temHabilidade = true;
-			String[] fraquezas = listaPokemon.get(i).getHabilidade().split(",");
+			String[] habilidades = listaPokemon.get(i).getHabilidade().split(",");
 			
-			for(int j = 0; j < fraquezas.length; j++){
-				
+			for(int j = 0; j < habilidades.length; j++){
+								
 				for(int m = 0; m < listaHabilidade.size(); m++){
 					
-					if(fraquezas[j].toLowerCase().equals(listaHabilidade.get(m).getNmHabilidade())){
+					if(habilidades[j].toLowerCase().trim().equals(listaHabilidade.get(m).getNmHabilidade())){
 						temHabilidade = false;
 						break;
 					}					
 				}
 				
 				if(temHabilidade){
-					listaHabilidade.add(new Habilidade(codHabilidade,fraquezas[j].trim().toLowerCase(),listaPokemon.get(i).getDescricao()));
+					listaHabilidade.add(new Habilidade(codHabilidade,habilidades[j].trim().toLowerCase(),listaPokemon.get(i).getDescricao()));
+					codHabilidade++;
 				}			
 			}			
 		}
@@ -245,6 +250,7 @@ public class Transformacao {
 				
 				if(temTipo){
 					listaTipo.add(new Tipo(codTipo,listaPokemon.get(i).getTipos().get(j).getTipo().trim()));
+					codTipo++;
 				}
 			}			
 		}
@@ -306,14 +312,113 @@ public class Transformacao {
 	}
 	
 	
+	public ArrayList<HabilidadePokemon> getListaHabPoke(){
+		
+		ArrayList<HabilidadePokemon> listaHabPoke = new ArrayList<HabilidadePokemon>();
+		ArrayList<Habilidade> listaHabilidade = getListaHabilidade();
+		boolean pokemonTemHabilidade;
+		int codHabilidade = 0;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			String[] habilidades = listaPokemon.get(i).getHabilidade().split(",");
+			
+			for(int j = 0; j < habilidades.length; j++){
+				
+				pokemonTemHabilidade = false;
+				
+				for(int m = 0; m < listaHabilidade.size(); m++){
+					
+					if(habilidades[j].toLowerCase().trim().equals(listaHabilidade.get(m).getNmHabilidade())){						
+						codHabilidade = listaHabilidade.get(m).getCodHabilidade();
+						pokemonTemHabilidade = true;
+						//break;
+					}					
+				}
+				
+				if(pokemonTemHabilidade){
+					
+					float aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
+					int numeroPokemon = (int) aux;					
+					listaHabPoke.add(new HabilidadePokemon(codHabilidade, numeroPokemon));
+				}
+				
+			}
+			
+		}
+		
+		return listaHabPoke;
+	}
 	
 	
+	//Depois ajustar este método para se adequar a tabela fraqueza do banco
+	public ArrayList<bdTipoPokemon> getListaFraqueza(){
+		
+		ArrayList<bdTipoPokemon> listaTpPokemon = new ArrayList<bdTipoPokemon>();
+		ArrayList<Tipo> listaTipo = getListaTipo();
+		
+		boolean pokemonTemTipo;
+		int codTipo = 0;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			for(int j = 0; j < listaPokemon.get(i).getTipos().size(); j++){
+				
+				pokemonTemTipo = false;
+				
+				for(int m = 0; m < listaTipo.size(); m++){
+					
+					if(listaPokemon.get(i).getTipos().get(j).getTipo().trim().equals(listaTipo.get(m).getNmTipo())){						
+						codTipo = listaTipo.get(m).getCodTipo();
+						pokemonTemTipo = true;
+					}
+								
+				}
+				
+				if(pokemonTemTipo){
+					
+					float aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
+					int numeroPokemon = (int) aux;					
+					listaTpPokemon.add(new bdTipoPokemon(numeroPokemon, codTipo));
+				}			
+			}		
+		}
+			
+		return listaTpPokemon;
+	}
 	
-	
-	
-	
-	
-	
-	
-	
+	public ArrayList<bdTipoPokemon> getListaTipoPokemon(){
+		
+		ArrayList<bdTipoPokemon> listaTpPokemon = new ArrayList<bdTipoPokemon>();
+		ArrayList<Tipo> listaTipo = getListaTipo();
+		
+		boolean pokemonTemTipo;
+		int codTipo = 0;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			for(int j = 0; j < listaPokemon.get(i).getTipos().size(); j++){
+				
+				pokemonTemTipo = false;
+				
+				for(int m = 0; m < listaTipo.size(); m++){
+					
+					if(listaPokemon.get(i).getTipos().get(j).getTipo().trim().equals(listaTipo.get(m).getNmTipo())){						
+						codTipo = listaTipo.get(m).getCodTipo();
+						pokemonTemTipo = true;
+					}
+								
+				}
+				
+				if(pokemonTemTipo){
+					
+					float aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
+					int numeroPokemon = (int) aux;					
+					listaTpPokemon.add(new bdTipoPokemon(numeroPokemon, codTipo));
+				}			
+			}		
+		}
+			
+		return listaTpPokemon;
+	}	
 }
