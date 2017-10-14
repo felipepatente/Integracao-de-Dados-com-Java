@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.text.html.StyleSheet.ListPainter;
+
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
@@ -21,6 +23,8 @@ import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
 import objetos.Sexo;
+import objetos.Tipo;
+import objetos.bdPokemon;
 
 public class Transformacao {
 	
@@ -219,13 +223,110 @@ public class Transformacao {
 	}
 	
 	
+	public ArrayList<Tipo> getListaTipo(){
+		
+		ArrayList<Tipo> listaTipo = new ArrayList<Tipo>();
+		boolean temTipo;
+		int codTipo = 1;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+						
+			for(int j = 0; j < listaPokemon.get(i).getTipos().size(); j++){
+				
+				temTipo = true;
+				for(int m = 0; m < listaTipo.size(); m++){
+					
+					if(listaPokemon.get(i).getTipos().get(j).getTipo().trim().equals(listaTipo.get(m).getNmTipo())){						
+						temTipo = false;
+						break;
+					}
+					
+				}
+				
+				if(temTipo){
+					listaTipo.add(new Tipo(codTipo,listaPokemon.get(i).getTipos().get(j).getTipo().trim()));
+				}
+			}			
+		}
+		
+		return listaTipo;
+	}
 	
 	
+	public ArrayList<bdPokemon> getListaPokemonbd(){
+		
+		ArrayList<bdPokemon> listaPoke = new ArrayList<bdPokemon>();
+		Pokemon pokemon = new Pokemon();
+		ArrayList<Categoria> listaCategoria = this.getListaCategoria();
+		int codPokemon = 0;
+		int codCategoria = 0;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			for(int j = 0; j < listaCategoria.size(); j++){
+				
+				if(listaPokemon.get(i).getCategoria().equals(listaCategoria.get(j).getNmCategoria())){
+					 codCategoria = listaCategoria.get(j).getCodCategoria();		
+					 break;
+				}							
+			}
+			pokemon = listaPokemon.get(i);
+			codPokemon = this.GetEvolucao(pokemon);
+			
+			if(codPokemon == 0){
+				listaPokemon.get(i).setEvoluiDe("Não tem");
+			}
+			
+			
+		}
+		
+		return listaPoke;
+	}
 	
+	public int GetEvolucao(){
+		
+		int numeroPokemon = 0;
+		float aux = 0f;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			if(!(listaPokemon.get(i).getEvoluiDe().equals(""))){
+
+				for(int j = 0; j < listaPokemon.size(); j++){
+					
+					if(listaPokemon.get(i).getEvoluiDe().equals(listaPokemon.get(j).getNome())){												
+						aux = Float.parseFloat(listaPokemon.get(j).getNumeroPokedex());
+						numeroPokemon = (int) aux;
+						return numeroPokemon;
+					}
+					
+				}
+			}			
+		}
+		
+		return numeroPokemon;
+	}
 	
-	
-	
-	
+	private int GetEvolucao(Pokemon pokemon){
+		
+		int numeroPokemon = 0;
+		float aux = 0f;
+		
+		if(!(pokemon.getEvoluiDe().equals(""))){
+
+			for(int i = 0; i < listaPokemon.size(); i++){
+				
+				if(pokemon.getEvoluiDe().equals(listaPokemon.get(i).getNome())){												
+					aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
+					numeroPokemon = (int) aux;
+					return numeroPokemon;
+				}
+				
+			}
+		}			
+		
+		return numeroPokemon;
+	}
 	
 	
 	

@@ -8,11 +8,11 @@ public class bdPokemon {
 	private String altura;
 	private String peso;
 	private String sexo;
-	private String codCategoria;
-	private String evoluiDe;
+	private int codCategoria;
+	private int evoluiDe;
 	
 	public bdPokemon(int codPokemon, String nome, String descricao, String altura, String peso, String sexo,
-			String codCategoria, String evoluiDe) {		
+			int codCategoria, int evoluiDe) {		
 		this.codPokemon = codPokemon;
 		this.nome = nome;
 		this.descricao = descricao;
@@ -71,19 +71,19 @@ public class bdPokemon {
 		this.sexo = sexo;
 	}
 
-	public String getCodCategoria() {
+	public int getCodCategoria() {
 		return codCategoria;
 	}
 
-	public void setCodCategoria(String codCategoria) {
+	public void setCodCategoria(int codCategoria) {
 		this.codCategoria = codCategoria;
 	}
 
-	public String getEvoluiDe() {
+	public int getEvoluiDe() {
 		return evoluiDe;
 	}
 
-	public void setEvoluiDe(String evoluiDe) {
+	public void setEvoluiDe(int evoluiDe) {
 		this.evoluiDe = evoluiDe;
 	}
 	

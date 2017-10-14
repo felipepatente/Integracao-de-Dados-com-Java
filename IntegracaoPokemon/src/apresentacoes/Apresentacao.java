@@ -12,6 +12,8 @@ import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
 import objetos.Sexo;
+import objetos.Tipo;
+import objetos.bdPokemon;
 import negocios.Extracao;
 import negocios.Transformacao;
 import objetos.Categoria;
@@ -57,13 +59,15 @@ public class Apresentacao {
 		ArrayList<Categoria> listaCategoria = trans.getListaCategoria();
 		ArrayList<Habilidade> listaHabilidade = trans.getListaHabilidade();
 		ArrayList<Sexo> listaSexo = trans.getListaSexo();
+		ArrayList<Tipo> listaTipo = trans.getListaTipo();
+		//ArrayList<bdPokemon> listaPoke = trans.getListaPokemonbd();
+		trans.GetEvolucao();
 		
-		
-		System.out.println(listaSexo.size());
-		for(int i = 0; i < listaSexo.size(); i++){
-			
-			System.out.println(listaSexo.get(i).getTipoSexo());			
-		}
+//		System.out.println(listaCategoria.size());
+//		for(int i = 0; i < listaCategoria.size(); i++){
+//			
+//			System.out.println(listaCategoria.get(i).getNmCategoria());			
+//		}
 		
 		//trans.inserirPokemon();
 
