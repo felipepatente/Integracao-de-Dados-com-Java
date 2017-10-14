@@ -13,6 +13,7 @@ import objetos.PokemonJSON;
 import objetos.PokemonXML;
 import negocios.Extracao;
 import negocios.Transformacao;
+import objetos.Categoria;
 import objetos.Pokemon;
 import objetos.PokemonBD;
 
@@ -51,16 +52,16 @@ public class Apresentacao {
 		trans.getDadosBDToPokemon(listaBD);
 		
 		ArrayList<Pokemon> listaPoke =  trans.getListaPokemon();
+		ArrayList<Categoria> listaCategoria = trans.getListaCategoria();
 		
 		Pokemon poke = new Pokemon();
 		
-		for(int i = 0; i < listaPoke.size(); i++){
+		for(int i = 0; i < listaCategoria.size(); i++){
 			
-			System.out.println(listaPoke.get(i).getNumeroPokedex());
-			
+			System.out.println(listaCategoria.get(i).getCodCategoria() + "\t" + listaCategoria.get(i).getNmCategoria());			
 		}
 		
-		trans.inserirPokemon();
+		//trans.inserirPokemon();
 
 		
 		System.out.println("Acabou");

@@ -74,7 +74,7 @@ public class Extracao {
 			
 		for(int i = 0; i < poke.length; i++){
 			
-			listaXML.add(new PokemonXML(poke[i].getNome(),poke[i].getDescricao(),poke[i].getPeso(),poke[i].getPeso(),
+			listaXML.add(new PokemonXML(poke[i].getNome(),poke[i].getDescricao(),poke[i].getPeso(),poke[i].getSexo(),
 					poke[i].getCategoria(),poke[i].getFraquezas()));			
 		}
 	}

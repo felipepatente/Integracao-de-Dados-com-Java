@@ -12,6 +12,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
 import conexoes.Conexao;
+import objetos.Categoria;
 import objetos.Fraqueza;
 import objetos.Pokemon;
 import objetos.PokemonBD;
@@ -24,7 +25,7 @@ public class Transformacao {
 	private ArrayList<Pokemon> listaPokemon;
 	
 	public Transformacao(){
-		listaPokemon = new ArrayList<Pokemon>();
+		listaPokemon = new ArrayList<Pokemon>();		
 	}
 	
 	public void getDadosXMLToPokemon(ArrayList<PokemonXML> listaXML){
@@ -127,6 +128,54 @@ public class Transformacao {
 			
 		}	
 	}
+	
+	
+	public ArrayList<Categoria> getListaCategoria(){
+		
+		ArrayList<Categoria> listaCategoria = new ArrayList<Categoria>();
+		boolean temCategoria;
+		int codCategoria = 1;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			temCategoria = true;
+			
+			for(int j = 0; j < listaCategoria.size(); j++){
+				
+				if(listaPokemon.get(i).getCategoria().equals(listaCategoria.get(j).getNmCategoria())){
+					temCategoria = false;
+					break;
+				}				
+			}
+			
+			if(temCategoria){
+				listaCategoria.add(new Categoria(codCategoria,listaPokemon.get(i).getCategoria()));
+				codCategoria++;
+			}
+		
+		}
+		
+		return listaCategoria;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
