@@ -75,6 +75,7 @@ public class Transformacao {
 		return listaPokemon;
 	}
 	
+	//Depois excluir esse método
 	public void inserirPokemon() throws Exception{
 	
 		Conexao conexao = new Conexao();
