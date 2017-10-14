@@ -189,21 +189,4 @@ public class Transformacao {
 		return listaHabilidade;		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
