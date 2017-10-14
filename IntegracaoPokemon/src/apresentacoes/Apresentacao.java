@@ -15,6 +15,7 @@ import objetos.Sexo;
 import objetos.Tipo;
 import objetos.bdPokemon;
 import objetos.bdTipoPokemon;
+import negocios.Carga;
 import negocios.Extracao;
 import negocios.Transformacao;
 import objetos.Categoria;
@@ -68,10 +69,17 @@ public class Apresentacao {
 		ArrayList<bdTipoPokemon> listaTpPoke = trans.getListaFraqueza();
 		ArrayList<bdTipoPokemon> listaTpPokem = trans.getListaTipoPokemon();
 		
+		Carga carga = new Carga();
+		//carga.inserirCategoria(listaCategoria);
+//		carga.inserirHabilidade(listaHabilidade);
+//		carga.inserirSexo(listaSexo);
+//		carga.inserirTipo(listaTipo);
+		carga.inserirPokemon(listaPoke);
+//		carga.inserirHabilidadePokemon(listaHabPoke);
 
-		for(int i = 0; i < listaTpPokem.size(); i++){			
-			System.out.println(listaTpPokem.get(i).getCodPokemon()+ " - " + listaTpPokem.get(i).getCodTipo());			
-		}
+//		for(int i = 0; i < listaPoke.size(); i++){			
+//			System.out.println(listaPoke.get(i).getCodPokemon() + " - " + listaPoke.get(i).getEvoluiDe());			
+//		}
 		
 		//trans.inserirPokemon();
 

@@ -262,9 +262,11 @@ public class Transformacao {
 	public ArrayList<bdPokemon> getListaPokemonbd(){
 		
 		ArrayList<bdPokemon> listaPoke = new ArrayList<bdPokemon>();
+		ArrayList<Sexo> listaSexo = getListaSexo();
 		Pokemon pokemon = new Pokemon();
 		ArrayList<Categoria> listaCategoria = this.getListaCategoria();
 		int codPokemon = 0;
+		int sexo = 0;
 		float aux = 0f;
 		int codCategoria = 0;
 		
@@ -282,9 +284,16 @@ public class Transformacao {
 			aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
 			codPokemon = (int) aux;
 			
+			for(int n = 0; n < listaSexo.size(); n++){
+				
+				if(listaPokemon.get(i).getSexo().equals(listaSexo.get(n).getTipoSexo())){					
+					sexo = listaSexo.get(n).getSexo();
+				}
+			}
+			
 			listaPoke.add(new bdPokemon(codPokemon, listaPokemon.get(i).getNome(), listaPokemon.get(i).getDescricao(), 
-					listaPokemon.get(i).getAltura(), listaPokemon.get(i).getPeso(), listaPokemon.get(i).getSexo(), 
-					codCategoria, GetEvolucao(pokemon)));
+					listaPokemon.get(i).getAltura(), listaPokemon.get(i).getPeso(), sexo,codCategoria, GetEvolucao(pokemon))); 
+					
 		}
 		
 		return listaPoke;
