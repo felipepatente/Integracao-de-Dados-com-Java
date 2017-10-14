@@ -20,6 +20,7 @@ import objetos.PokemonBD;
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
+import objetos.Sexo;
 
 public class Transformacao {
 	
@@ -188,5 +189,53 @@ public class Transformacao {
 		
 		return listaHabilidade;		
 	}
+	
+	
+	public ArrayList<Sexo> getListaSexo(){
+		
+		ArrayList<Sexo> listaSexo = new ArrayList<Sexo>();
+		boolean temSexo;
+		int sexo = 1;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			temSexo = true;
+			
+			for(int j = 0; j < listaSexo.size(); j++){				
+				if(listaPokemon.get(i).getSexo().equals(listaSexo.get(j).getTipoSexo())){
+					temSexo = false;
+					break;
+				}				
+			}
+			
+			if(temSexo){
+				listaSexo.add(new Sexo(sexo,listaPokemon.get(i).getSexo()));
+				sexo++;
+			}
+			
+		}
+		
+		return listaSexo;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

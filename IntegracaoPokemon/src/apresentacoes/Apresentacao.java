@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import objetos.PokemonCSV;
 import objetos.PokemonJSON;
 import objetos.PokemonXML;
+import objetos.Sexo;
 import negocios.Extracao;
 import negocios.Transformacao;
 import objetos.Categoria;
@@ -55,12 +56,13 @@ public class Apresentacao {
 		
 		ArrayList<Categoria> listaCategoria = trans.getListaCategoria();
 		ArrayList<Habilidade> listaHabilidade = trans.getListaHabilidade();
+		ArrayList<Sexo> listaSexo = trans.getListaSexo();
 		
 		
-		System.out.println(listaHabilidade.size());
-		for(int i = 0; i < listaHabilidade.size(); i++){
+		System.out.println(listaSexo.size());
+		for(int i = 0; i < listaSexo.size(); i++){
 			
-			System.out.println(listaHabilidade.get(i).getNmHabilidade());			
+			System.out.println(listaSexo.get(i).getTipoSexo());			
 		}
 		
 		//trans.inserirPokemon();
