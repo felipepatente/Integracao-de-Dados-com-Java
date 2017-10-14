@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import conexoes.Conexao;
 import objetos.Categoria;
 import objetos.Fraqueza;
+import objetos.Habilidade;
 import objetos.Pokemon;
 import objetos.PokemonBD;
 import objetos.PokemonCSV;
@@ -151,15 +152,42 @@ public class Transformacao {
 			if(temCategoria){
 				listaCategoria.add(new Categoria(codCategoria,listaPokemon.get(i).getCategoria()));
 				codCategoria++;
-			}
-		
+			}		
 		}
 		
 		return listaCategoria;
 	}
 	
 	
-	
+	public ArrayList<Habilidade> getListaHabilidade(){
+		
+		ArrayList<Habilidade> listaHabilidade = new ArrayList<Habilidade>();
+		boolean temHabilidade;
+		int codHabilidade = 1;
+		
+		for(int i = 0; i < listaPokemon.size(); i++){
+			
+			temHabilidade = true;
+			String[] fraquezas = listaPokemon.get(i).getHabilidade().split(",");
+			
+			for(int j = 0; j < fraquezas.length; j++){
+				
+				for(int m = 0; m < listaHabilidade.size(); m++){
+					
+					if(fraquezas[j].toLowerCase().equals(listaHabilidade.get(m).getNmHabilidade())){
+						temHabilidade = false;
+						break;
+					}					
+				}
+				
+				if(temHabilidade){
+					listaHabilidade.add(new Habilidade(codHabilidade,fraquezas[j].trim().toLowerCase(),listaPokemon.get(i).getDescricao()));
+				}			
+			}			
+		}
+		
+		return listaHabilidade;		
+	}
 	
 	
 	

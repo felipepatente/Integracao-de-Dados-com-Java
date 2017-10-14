@@ -14,6 +14,7 @@ import objetos.PokemonXML;
 import negocios.Extracao;
 import negocios.Transformacao;
 import objetos.Categoria;
+import objetos.Habilidade;
 import objetos.Pokemon;
 import objetos.PokemonBD;
 
@@ -51,19 +52,19 @@ public class Apresentacao {
 		trans.getDadosCSVToPokemon(listaCSV);
 		trans.getDadosBDToPokemon(listaBD);
 		
-		ArrayList<Pokemon> listaPoke =  trans.getListaPokemon();
+		
 		ArrayList<Categoria> listaCategoria = trans.getListaCategoria();
+		ArrayList<Habilidade> listaHabilidade = trans.getListaHabilidade();
 		
-		Pokemon poke = new Pokemon();
 		
-		for(int i = 0; i < listaCategoria.size(); i++){
+		System.out.println(listaHabilidade.size());
+		for(int i = 0; i < listaHabilidade.size(); i++){
 			
-			System.out.println(listaCategoria.get(i).getCodCategoria() + "\t" + listaCategoria.get(i).getNmCategoria());			
+			System.out.println(listaHabilidade.get(i).getNmHabilidade());			
 		}
 		
 		//trans.inserirPokemon();
 
-		
 		System.out.println("Acabou");
 		
 	}
