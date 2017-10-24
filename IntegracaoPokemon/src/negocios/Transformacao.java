@@ -75,10 +75,18 @@ public class Transformacao {
 	}
 	
 	public void getDadosBDToPokemon(ArrayList<PokemonBD> listaBD){
-		
-		PokemonJSON pokeJSON = new PokemonJSON();		
+			
 		for(int i = 0; i < listaBD.size(); i++){			
-			listaPokemon.get(i).setNumeroPokedex(listaBD.get(i).getNumero());			
+
+			for(int j = 0; j < listaPokemon.size(); j++){
+				
+				if(listaBD.get(i).getNome().equals(listaPokemon.get(j).getNome())){
+					listaPokemon.get(j).setNumeroPokedex(listaBD.get(i).getNumero());
+					System.out.println(listaPokemon.get(j).getNome() + "\t" + listaBD.get(i).getNome());
+				}
+				
+			}
+			
 		}		
 	}
 	
