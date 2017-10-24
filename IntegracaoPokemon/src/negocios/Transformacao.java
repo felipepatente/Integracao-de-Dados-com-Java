@@ -348,40 +348,39 @@ public class Transformacao {
 	}
 	
 	
-	//Depois ajustar este método para se adequar a tabela fraqueza do banco
-	public ArrayList<bdTipoPokemon> getListaFraqueza(){
+	public ArrayList<bdFraqueza> getListaFraqueza(){
 		
-		ArrayList<bdTipoPokemon> listaTpPokemon = new ArrayList<bdTipoPokemon>();
+		ArrayList<bdFraqueza> listaFraqueza = new ArrayList<bdFraqueza>();
 		ArrayList<Tipo> listaTipo = getListaTipo();
 		
-		boolean pokemonTemTipo;
+		boolean pokemonTemFraqueza;
 		int codTipo = 0;
 		
 		for(int i = 0; i < listaPokemon.size(); i++){
 			
-			for(int j = 0; j < listaPokemon.get(i).getTipos().size(); j++){
+			for(int j = 0; j < listaPokemon.get(i).getFraquezas().size(); j++){
 				
-				pokemonTemTipo = false;
+				pokemonTemFraqueza = false;
 				
 				for(int m = 0; m < listaTipo.size(); m++){
 					
-					if(listaPokemon.get(i).getTipos().get(j).getTipo().trim().equals(listaTipo.get(m).getNmTipo())){						
+					if(listaPokemon.get(i).getFraquezas().get(j).getFraqueza().trim().equals(listaTipo.get(m).getNmTipo())){						
 						codTipo = listaTipo.get(m).getCodTipo();
-						pokemonTemTipo = true;
+						pokemonTemFraqueza = true;
 					}
 								
 				}
 				
-				if(pokemonTemTipo){
+				if(pokemonTemFraqueza){
 					
 					float aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
 					int numeroPokemon = (int) aux;					
-					listaTpPokemon.add(new bdTipoPokemon(numeroPokemon, codTipo));
+					listaFraqueza.add(new bdFraqueza(numeroPokemon, codTipo));
 				}			
 			}		
 		}
 			
-		return listaTpPokemon;
+		return listaFraqueza;
 	}
 	
 	public ArrayList<bdTipoPokemon> getListaTipoPokemon(){

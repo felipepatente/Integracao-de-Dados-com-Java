@@ -13,6 +13,7 @@ import objetos.PokemonJSON;
 import objetos.PokemonXML;
 import objetos.Sexo;
 import objetos.Tipo;
+import objetos.bdFraqueza;
 import objetos.bdPokemon;
 import objetos.bdTipoPokemon;
 import negocios.Carga;
@@ -65,10 +66,9 @@ public class Apresentacao {
 		ArrayList<Tipo> listaTipo = trans.getListaTipo();
 		ArrayList<bdPokemon> listaPoke = trans.getListaPokemonbd();
 		ArrayList<Pokemon> listaPokemon = trans.getListaPokemon();
-		ArrayList<HabilidadePokemon> listaHabPoke = trans.getListaHabPoke();		
-		//Depois Ajustar
-		ArrayList<bdTipoPokemon> listaTpPoke = trans.getListaFraqueza();
-		ArrayList<bdTipoPokemon> listaTpPokem = trans.getListaTipoPokemon();
+		ArrayList<HabilidadePokemon> listaHabPoke = trans.getListaHabPoke();				
+		ArrayList<bdFraqueza> listaFraqueza = trans.getListaFraqueza();
+		ArrayList<bdTipoPokemon> listaTipoPokemon = trans.getListaTipoPokemon();
 		
 		
 		
@@ -77,7 +77,7 @@ public class Apresentacao {
 //		carga.inserirHabilidade(listaHabilidade);
 //		carga.inserirSexo(listaSexo);
 //		carga.inserirTipo(listaTipo);
-		carga.inserirPokemon(listaPoke,listaPokemon);
+//		carga.inserirPokemon(listaPoke,listaPokemon);
 //		carga.inserirHabilidadePokemon(listaHabPoke);
 
 //		for(int i = 0; i < listaPokemon.size(); i++){			
