@@ -321,7 +321,7 @@
       "nome":"Nidoran",
       "descricao":"Nidoran? has developed muscles for moving its ears. Thanks to them, the ears can be freely moved in any direction. Even the slightest sound does not escape this Pokemon's notice.",
       "peso":"9,0 kg",
-      "sexo":"Macho",
+      "sexo":"Ambos",
       "categoria":"Poison Pin",
       "tipos":[
          {
@@ -1004,19 +1004,6 @@
       "tipos":[
          {
          	"tipo": "Ground"
-         }
-      ]
-   },
-   
-   {
-      "nome":"Nidoran",
-      "descricao":"Nidoran? has barbs that secrete a powerful poison. They are thought to have developed as protection for this small-bodied Pokemon. When enraged, it releases a horrible toxin from its horn.",
-      "peso":"7,0 kg",
-      "sexo":"Femea",
-      "categoria":"Poison Pin",
-      "tipos":[         
-         {
-         	"tipo": "Poison"
          }
       ]
    },

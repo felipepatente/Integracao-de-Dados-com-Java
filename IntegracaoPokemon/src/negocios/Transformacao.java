@@ -75,17 +75,15 @@ public class Transformacao {
 	}
 	
 	public void getDadosBDToPokemon(ArrayList<PokemonBD> listaBD){
-			
-		for(int i = 0; i < listaBD.size(); i++){			
+		
+		for(int i = 0; i < listaPokemon.size(); i++){			
 
-			for(int j = 0; j < listaPokemon.size(); j++){
+			for(int j = 0; j < listaBD.size(); j++){
 				
-				if(listaBD.get(i).getNome().toLowerCase().trim().equals(listaPokemon.get(j).getNome().toLowerCase().trim())){
-					listaPokemon.get(j).setNumeroPokedex(listaBD.get(i).getNumero());
-				}
-				
-			}
-			
+				if(listaBD.get(j).getNome().toLowerCase().trim().equals(listaPokemon.get(i).getNome().toLowerCase().trim())){					
+					listaPokemon.get(i).setNumeroPokedex(listaBD.get(j).getNumero());					
+				}				
+			}			
 		}		
 	}
 	
@@ -270,7 +268,6 @@ public class Transformacao {
 		
 		ArrayList<bdPokemon> listaPoke = new ArrayList<bdPokemon>();
 		ArrayList<Sexo> listaSexo = getListaSexo();
-		Pokemon pokemon = new Pokemon();
 		ArrayList<Categoria> listaCategoria = this.getListaCategoria();
 		int codPokemon = 0;
 		int sexo = 0;
@@ -286,9 +283,7 @@ public class Transformacao {
 					 break;
 				}							
 			}
-			pokemon = listaPokemon.get(i);
-			
-			
+
 			if(listaPokemon.get(i).getNumeroPokedex() != null){
 				aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
 				codPokemon = (int) aux;

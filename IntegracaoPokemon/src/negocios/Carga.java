@@ -101,6 +101,7 @@ public class Carga {
 		for (int i=0; i< listaPokemon.size(); i++) {
 			
 			bdPokemon p = listaPokemon.get(i);	
+			System.out.println(p.getCodPokemon() + "\t" + p.getNome());
 			prepare = conn.prepareStatement(sql);
 			prepare.setInt(1, p.getCodPokemon());
 			prepare.setString(2, p.getNome());
@@ -186,7 +187,7 @@ public class Carga {
 	
 	public void inserirTipoPokemon(ArrayList<bdTipoPokemon> listaTipoPokemon) throws SQLException{
 		
-		String sql = "INSERT INTO fraqueza (codPokemon,CodTipo)"
+		String sql = "INSERT INTO tipoPokemon (codPokemon,CodTipo)"
 				+ " VALUES(?,?);";	
 		
 		for (int i=0; i< listaTipoPokemon.size(); i++) {

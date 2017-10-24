@@ -424,7 +424,7 @@
       <nome>Nidoran</nome>
       <descricao>Nidoran? has developed muscles for moving its ears. Thanks to them, the ears can be freely moved in any direction. Even the slightest sound does not escape this Pokémon's notice.</descricao>
       <peso>9,0 kg</peso>
-      <sexo>Macho</sexo>
+      <sexo>Ambos</sexo>
       <categoria>Poison Pin</categoria>
       <fraquezas>
          <fraquezas>
@@ -1328,23 +1328,7 @@
          </fraquezas>
       </fraquezas>
    </item>
-   
-   <item>
-      <nome>Nidoran</nome>
-      <descricao>Nidoran? has barbs that secrete a powerful poison. They are thought to have developed as protection for this small-bodied Pokémon. When enraged, it releases a horrible toxin from its horn.</descricao>
-      <peso>7,0 kg</peso>
-      <sexo>Femea</sexo>
-      <categoria>Poison Pin</categoria>
-      <fraquezas>
-         <fraquezas>
-         	<fraqueza>Ground</fraqueza>
-         </fraquezas>
-         <fraquezas>
-         	<fraqueza>Psychic</fraqueza>
-         </fraquezas>
-      </fraquezas>
-   </item>
-   
+ 
    <item>
       <nome>Nidorina</nome>
       <descricao>When Nidorina are with their friends or family, they keep their barbs tucked away to prevent hurting each other. This Pokémon appears to become nervous if separated from the others.</descricao>

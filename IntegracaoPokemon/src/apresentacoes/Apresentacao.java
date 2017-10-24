@@ -73,14 +73,14 @@ public class Apresentacao {
 		
 		
 		Carga carga = new Carga();
-		//carga.inserirCategoria(listaCategoria);
-//		carga.inserirHabilidade(listaHabilidade);
-//		carga.inserirSexo(listaSexo);
-//		carga.inserirTipo(listaTipo);
-//		carga.inserirPokemon(listaPoke,listaPokemon);
-//		carga.inserirHabilidadePokemon(listaHabPoke);
-//		carga.inserirFraqueza(listaFraqueza);
-//		carga.inserirTipo(listaTipo);
+		carga.inserirCategoria(listaCategoria);
+		carga.inserirHabilidade(listaHabilidade);
+		carga.inserirSexo(listaSexo);
+		carga.inserirTipo(listaTipo);
+		carga.inserirPokemon(listaPoke,listaPokemon);
+		carga.inserirHabilidadePokemon(listaHabPoke);
+		carga.inserirFraqueza(listaFraqueza);
+		carga.inserirTipoPokemon(listaTipoPokemon);
 
 //		for(int i = 0; i < listaPokemon.size(); i++){			
 //			System.out.println(listaPokemon.get(i).getNumeroPokedex() + " - " + listaPokemon.get(i).getNome()   

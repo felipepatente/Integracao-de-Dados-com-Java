@@ -89,8 +89,7 @@ public class Extracao {
 			
 			while (rs.next()) {
 				listaBD.add(new PokemonBD(rs.getString("Numero Pokedex"),rs.getString("Nome"),rs.getString("descrição"),
-						rs.getString("Categoria"),rs.getString("sexo"),rs.getString("Evolui De")));
-			
+						rs.getString("Categoria"),rs.getString("sexo"),rs.getString("Evolui De")));			
 			}
 	}
 	

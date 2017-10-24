@@ -1,4 +1,4 @@
-altura;categoria;descricao;evoluide;habilidade;nome;sexo
+﻿altura;categoria;descricao;evoluide;habilidade;nome;sexo
 0,7 m;Cocoon;The shell covering this Pokémon's body is as hard as an iron slab. Metapod does not move very much. It stays still because it is preparing its soft innards for evolution inside the hard shell.;Caterpie;Shed Skin;Metapod;Ambos
 1,1 m;Buttlerfly;Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest.;Metapod;Compound Eyes;ButterFree;Ambos
 0,3 m;Hairy Bug;Weedle has an extremely acute sense of smell. It is capable of distinguishing its favorite kinds of leaves from those it dislikes just by sniffing with its big red proboscis (nose).;;Shield Dust;Weedle;Ambos
@@ -20,7 +20,7 @@ altura;categoria;descricao;evoluide;habilidade;nome;sexo
 0,8 m;Duck;Psyduck uses a mysterious power. When it does so, this Pokémon generates brain waves that are supposedly only seen in sleepers. This discovery spurred controversy among scholars.;;Damp, Cloud Nine;Psyduck;Ambos
 1,7 m;Duck;The webbed flippers on its forelegs and hind legs and the streamlined body of Golduck give it frightening speed. This Pokémon is definitely much faster than even the most athletic swimmer.;Psyduck;Damp, Cloud Nine;Golduck;Ambos
 1,3 m;Drill;Nidoqueen's body is encased in extremely hard scales. It is adept at sending foes flying with harsh tackles. This Pokémon is at its strongest when it is defending its young.;Nidorina;Poison Point, Rivalry;Nidoqueen;Femea
-0,5 m;Poison Pin;Nidoran? has developed muscles for moving its ears. Thanks to them, the ears can be freely moved in any direction. Even the slightest sound does not escape this Pokémon's notice.;;Poison Point, Rivalry;Nidoran;Macho
+0,5 m;Poison Pin;Nidoran? has developed muscles for moving its ears. Thanks to them, the ears can be freely moved in any direction. Even the slightest sound does not escape this Pokémon's notice.;;Poison Point, Rivalry;Nidoran;Ambos
 0,9 m;Poison Pin;Nidorino has a horn that is harder than a diamond. If it senses a hostile presence, all the barbs on its back bristle up at once, and it challenges the foe with all its might.;Nidoran;Poison Point, Rivalry;Nidorino;Macho
 1,4 m;Drill;Nidoking's thick tail packs enormously destructive power. With one swing, it can topple a metal transmission tower. Once this Pokémon goes on a rampage, there is no stopping it.;Nidorino;Poison Point, Rivalry;Nidoking;Macho
 0,6 m;Fairy;On every night of a full moon, groups of this Pokémon come out to play. When dawn arrives, the tired Clefairy return to their quiet mountain retreats and go to sleep nestled up against each other.;Cleffa;Cute Charm, Magic Guard;Clefairy;Ambos
@@ -68,7 +68,6 @@ altura;categoria;descricao;evoluide;habilidade;nome;sexo
 0,8 m;Mouse;If the electrical sacs become excessively charged, Raichu plants its tail in the ground and discharges. Scorched patches of ground will be found near this Pokémon's nest.;Pikachu;Static;Raichu;Ambos
 0,6 m;Mouse;Sandshrew's body is configured to absorb water without waste, enabling it to survive in an arid desert. This Pokémon curls up to protect itself from its enemies.;;Sand Veil;Sandshrew;Ambos
 1,0 m;Mouse;Sandslash's body is covered by tough spikes, which are hardened sections of its hide. Once a year, the old spikes fall out, to be replaced with new spikes that grow out from beneath the old ones.;Sandshrew;Sand Veil;Sandslash;Ambos
-0,4 m;Poison Pin;Nidoran? has barbs that secrete a powerful poison. They are thought to have developed as protection for this small-bodied Pokémon. When enraged, it releases a horrible toxin from its horn.;;Poison Point, Rivalry;Nidoran;Femea
 0,8 m;Poinson Pin;When Nidorina are with their friends or family, they keep their barbs tucked away to prevent hurting each other. This Pokémon appears to become nervous if separated from the others.;Nidoran;Poison Point, Rivalry;Nidorina;Femea
 ;Pig Monkey;When Mankey starts shaking and its nasal breathing turns rough, it's a sure sign that it is becoming angry. However, because it goes into a towering rage almost instantly, it is impossible for anyone to flee its wrath;;Vital Spirit;Mankey;Ambos
 1,0m;Pig Monkey;When Primeape becomes furious, its blood circulation is boosted. In turn, its muscles are made even stronger. However, it also becomes much less intelligent at the same time.;Mankey;Vital Spirit;Primeape;Ambos
