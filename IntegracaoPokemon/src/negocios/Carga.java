@@ -12,7 +12,9 @@ import objetos.HabilidadePokemon;
 import objetos.Pokemon;
 import objetos.Sexo;
 import objetos.Tipo;
+import objetos.bdFraqueza;
 import objetos.bdPokemon;
+import objetos.bdTipoPokemon;
 
 public class Carga {
 	
@@ -167,5 +169,33 @@ public class Carga {
 		}		
 	}
 	
+	public void inserirFraqueza(ArrayList<bdFraqueza> listaFraqueza) throws SQLException{
+		
+		String sql = "INSERT INTO fraqueza (codPokemon,CodTipo)"
+				+ " VALUES(?,?);";	
+		
+		for (int i=0; i< listaFraqueza.size(); i++) {
+			
+			bdFraqueza f = listaFraqueza.get(i);		
+			prepare = conn.prepareStatement(sql);			
+			prepare.setInt(1, f.getCodPokemon());
+			prepare.setInt(2, f.getCodTipo());
+			prepare.executeUpdate();			
+		}		
+	}
 	
+	public void inserirTipoPokemon(ArrayList<bdTipoPokemon> listaTipoPokemon) throws SQLException{
+		
+		String sql = "INSERT INTO fraqueza (codPokemon,CodTipo)"
+				+ " VALUES(?,?);";	
+		
+		for (int i=0; i< listaTipoPokemon.size(); i++) {
+			
+			bdTipoPokemon tp = listaTipoPokemon.get(i);		
+			prepare = conn.prepareStatement(sql);			
+			prepare.setInt(1, tp.getCodPokemon());
+			prepare.setInt(2, tp.getCodTipo());
+			prepare.executeUpdate();			
+		}		
+	}	
 }

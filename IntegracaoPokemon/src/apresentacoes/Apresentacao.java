@@ -79,6 +79,8 @@ public class Apresentacao {
 //		carga.inserirTipo(listaTipo);
 //		carga.inserirPokemon(listaPoke,listaPokemon);
 //		carga.inserirHabilidadePokemon(listaHabPoke);
+//		carga.inserirFraqueza(listaFraqueza);
+//		carga.inserirTipo(listaTipo);
 
 //		for(int i = 0; i < listaPokemon.size(); i++){			
 //			System.out.println(listaPokemon.get(i).getNumeroPokedex() + " - " + listaPokemon.get(i).getNome()   
