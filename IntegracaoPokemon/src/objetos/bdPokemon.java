@@ -12,15 +12,14 @@ public class bdPokemon {
 	private int evoluiDe;
 	
 	public bdPokemon(int codPokemon, String nome, String descricao, String altura, String peso, int sexo,
-			int codCategoria, int evoluiDe) {		
+			int codCategoria) {		
 		this.codPokemon = codPokemon;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.altura = altura;
 		this.peso = peso;
 		this.sexo = sexo;
-		this.codCategoria = codCategoria;
-		this.evoluiDe = evoluiDe;
+		this.codCategoria = codCategoria;		
 	}
 
 	public int getCodPokemon() {

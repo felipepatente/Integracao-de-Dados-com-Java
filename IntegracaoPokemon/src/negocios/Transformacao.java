@@ -82,7 +82,8 @@ public class Transformacao {
 				
 				if(listaBD.get(i).getNome().equals(listaPokemon.get(j).getNome())){
 					listaPokemon.get(j).setNumeroPokedex(listaBD.get(i).getNumero());
-					System.out.println(listaPokemon.get(j).getNome() + "\t" + listaBD.get(i).getNome());
+					System.out.println(i + "\t" + listaPokemon.get(j).getNome() + "\t" + listaBD.get(i).getNome()
+							+ "\t" + listaPokemon.get(j).getNumeroPokedex() + "\t" + listaBD.get(i).getNumero());
 				}
 				
 			}
@@ -289,7 +290,7 @@ public class Transformacao {
 			}
 			pokemon = listaPokemon.get(i);
 			
-			aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
+//			aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
 			codPokemon = (int) aux;
 			
 			for(int n = 0; n < listaSexo.size(); n++){

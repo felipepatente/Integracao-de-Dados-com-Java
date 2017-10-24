@@ -77,9 +77,9 @@ public class Apresentacao {
 //		carga.inserirPokemon(listaPoke);
 //		carga.inserirHabilidadePokemon(listaHabPoke);
 
-		for(int i = 0; i < listaPoke.size(); i++){			
-			System.out.println(listaPoke.get(i).getCodPokemon() + " - " + listaPoke.get(i).getEvoluiDe());			
-		}
+//		for(int i = 0; i < listaPoke.size(); i++){			
+//			System.out.println(listaPoke.get(i).getCodPokemon() + " - " + listaPoke.get(i).getEvoluiDe());			
+//		}
 		
 		//trans.inserirPokemon();
 
