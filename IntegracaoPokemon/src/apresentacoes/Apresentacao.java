@@ -64,24 +64,28 @@ public class Apresentacao {
 		ArrayList<Sexo> listaSexo = trans.getListaSexo();
 		ArrayList<Tipo> listaTipo = trans.getListaTipo();
 		ArrayList<bdPokemon> listaPoke = trans.getListaPokemonbd();
+		ArrayList<Pokemon> listaPokemon = trans.getListaPokemon();
 		ArrayList<HabilidadePokemon> listaHabPoke = trans.getListaHabPoke();		
 		//Depois Ajustar
 		ArrayList<bdTipoPokemon> listaTpPoke = trans.getListaFraqueza();
 		ArrayList<bdTipoPokemon> listaTpPokem = trans.getListaTipoPokemon();
+		
+		
 		
 		Carga carga = new Carga();
 		//carga.inserirCategoria(listaCategoria);
 //		carga.inserirHabilidade(listaHabilidade);
 //		carga.inserirSexo(listaSexo);
 //		carga.inserirTipo(listaTipo);
-//		carga.inserirPokemon(listaPoke);
+		carga.inserirPokemon(listaPoke,listaPokemon);
 //		carga.inserirHabilidadePokemon(listaHabPoke);
 
-//		for(int i = 0; i < listaPoke.size(); i++){			
-//			System.out.println(listaPoke.get(i).getCodPokemon() + " - " + listaPoke.get(i).getEvoluiDe());			
+//		for(int i = 0; i < listaPokemon.size(); i++){			
+//			System.out.println(listaPokemon.get(i).getNumeroPokedex() + " - " + listaPokemon.get(i).getNome()   
+//					+ " - " + listaPokemon.get(i).getEvoluiDe());			
 //		}
 		
-		//trans.inserirPokemon();
+//		trans.inserirPokemon();
 
 		System.out.println("Acabou");
 		

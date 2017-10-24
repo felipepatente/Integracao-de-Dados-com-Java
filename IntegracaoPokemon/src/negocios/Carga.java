@@ -91,12 +91,12 @@ public class Carga {
 		
 	}
 	
-	public void inserirPokemon(ArrayList<bdPokemon> listaPokemon) throws SQLException{
+	public void inserirPokemon(ArrayList<bdPokemon> listaPokemon, ArrayList<Pokemon> pokemon) throws SQLException{
+		
+		String sql = "INSERT INTO Pokemon (codPokemon,nome,descricao,altura,peso,sexo,codCategoria)"
+				+ " VALUES(?,?,?,?,?,?,?);";
 		
 		for (int i=0; i< listaPokemon.size(); i++) {
-			
-			String sql = "INSERT INTO Pokemon (codPokemon,nome,descricao,altura,peso,sexo,codCategoria)"
-					+ " VALUES(?,?,?,?,?,?,?);";
 			
 			bdPokemon p = listaPokemon.get(i);	
 			prepare = conn.prepareStatement(sql);
@@ -108,7 +108,47 @@ public class Carga {
 			prepare.setInt(6, p.getSexo());
 			prepare.setInt(7, p.getCodCategoria());										
 			prepare.executeUpdate();
-		}		
+		}	
+		
+		Transformacao trans = new Transformacao();		
+		inserirEvoluiDe(listaPokemon, pokemon);
+		
+	}
+	
+	private void inserirEvoluiDe(ArrayList<bdPokemon> listaPokemon, ArrayList<Pokemon> pokemon) throws SQLException{
+		
+		String sql = "UPDATE Pokemon SET evoluiDe = ? WHERE codPokemon = ?";
+		
+		for (int i=0; i < listaPokemon.size(); i++) {
+			
+			bdPokemon p = listaPokemon.get(i);
+			Pokemon po = pokemon.get(i);
+			
+			prepare = conn.prepareStatement(sql);			
+			p.setEvoluiDe(getEvoluiDe(po.getEvoluiDe(), pokemon));			
+			
+			if(p.getEvoluiDe() != 0){
+				prepare.setInt(1, p.getEvoluiDe());
+				prepare.setInt(2, p.getCodPokemon());													
+				prepare.executeUpdate();
+			}
+		}
+		
+	}
+	
+	private int getEvoluiDe(String evouiDe,ArrayList<Pokemon> pokemon){
+		
+		for(int i = 0; i < pokemon.size(); i++){
+			
+			Pokemon po = pokemon.get(i);
+			
+			if(evouiDe.equals(po.getNome())){
+				float aux = Float.parseFloat(po.getNumeroPokedex());
+				return (int) aux;
+			}			
+		}
+		
+		return 0;
 	}
 
 	public void inserirHabilidadePokemon(ArrayList<HabilidadePokemon> listaHabPoke) throws SQLException{
@@ -124,8 +164,7 @@ public class Carga {
 			prepare.setInt(2, hp.getCodPokemon());
 			prepare.executeUpdate();
 			
-		}
-		
+		}		
 	}
 	
 	

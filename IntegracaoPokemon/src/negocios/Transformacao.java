@@ -80,10 +80,8 @@ public class Transformacao {
 
 			for(int j = 0; j < listaPokemon.size(); j++){
 				
-				if(listaBD.get(i).getNome().equals(listaPokemon.get(j).getNome())){
+				if(listaBD.get(i).getNome().toLowerCase().trim().equals(listaPokemon.get(j).getNome().toLowerCase().trim())){
 					listaPokemon.get(j).setNumeroPokedex(listaBD.get(i).getNumero());
-					System.out.println(i + "\t" + listaPokemon.get(j).getNome() + "\t" + listaBD.get(i).getNome()
-							+ "\t" + listaPokemon.get(j).getNumeroPokedex() + "\t" + listaBD.get(i).getNumero());
 				}
 				
 			}
@@ -290,8 +288,11 @@ public class Transformacao {
 			}
 			pokemon = listaPokemon.get(i);
 			
-//			aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
-			codPokemon = (int) aux;
+			
+			if(listaPokemon.get(i).getNumeroPokedex() != null){
+				aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
+				codPokemon = (int) aux;
+			}
 			
 			for(int n = 0; n < listaSexo.size(); n++){
 				
@@ -301,35 +302,13 @@ public class Transformacao {
 			}
 			
 			listaPoke.add(new bdPokemon(codPokemon, listaPokemon.get(i).getNome(), listaPokemon.get(i).getDescricao(), 
-					listaPokemon.get(i).getAltura(), listaPokemon.get(i).getPeso(), sexo,codCategoria, GetEvolucao(pokemon))); 
+					listaPokemon.get(i).getAltura(), listaPokemon.get(i).getPeso(), sexo,codCategoria)); 
 					
 		}
 		
 		return listaPoke;
 	}
-	
-	private int GetEvolucao(Pokemon pokemon){
-		
-		int numeroPokemon = 0;
-		float aux = 0f;
-		
-		if(!(pokemon.getEvoluiDe().equals(""))){
 
-			for(int i = 0; i < listaPokemon.size(); i++){
-				
-				if(pokemon.getEvoluiDe().equals(listaPokemon.get(i).getNome())){												
-					aux = Float.parseFloat(listaPokemon.get(i).getNumeroPokedex());
-					numeroPokemon = (int) aux;
-					return numeroPokemon;
-				}
-				
-			}
-		}			
-		
-		return numeroPokemon;
-	}
-	
-	
 	public ArrayList<HabilidadePokemon> getListaHabPoke(){
 		
 		ArrayList<HabilidadePokemon> listaHabPoke = new ArrayList<HabilidadePokemon>();
