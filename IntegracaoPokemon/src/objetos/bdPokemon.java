@@ -51,15 +51,19 @@ public class bdPokemon {
 	}
 
 	public void setAltura(String altura) {	
-		this.altura = Double.parseDouble(altura.replace(",",".").replace(" m",""));
+		
+		if(!altura.isEmpty()){
+			this.altura = Double.parseDouble(altura.replace(",",".").replace(" m","").replace("m",""));
+		}
+		
 	}
 
 	public double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(String peso) {
-		this.peso = Double.parseDouble(peso.replace(",",".").replace(" Kg",""));		
+	public void setPeso(String peso) {				
+		this.peso = Double.parseDouble(peso.replace(",",".").replace(" kg","").replace(" Kg","").replace("kg",""));
 	}
 
 	public int getSexo() {

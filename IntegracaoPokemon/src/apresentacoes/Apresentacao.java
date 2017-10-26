@@ -88,7 +88,7 @@ public class Apresentacao {
 		
 //		trans.inserirPokemon();
 
-//		System.out.println("Acabou");
+		System.out.println("Acabou");
 		
 	}
 
