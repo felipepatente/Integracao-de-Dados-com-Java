@@ -101,7 +101,6 @@ public class Carga {
 		for (int i=0; i< listaPokemon.size(); i++) {
 			
 			bdPokemon p = listaPokemon.get(i);	
-			System.out.println(p.getCodPokemon() + "\t" + p.getNome());
 			prepare = conn.prepareStatement(sql);
 			prepare.setInt(1, p.getCodPokemon());
 			prepare.setString(2, p.getNome());
@@ -113,7 +112,7 @@ public class Carga {
 			prepare.executeUpdate();
 		}	
 		
-		Transformacao trans = new Transformacao();		
+//		Transformacao trans = new Transformacao();		
 		inserirEvoluiDe(listaPokemon, pokemon);
 		
 	}
@@ -121,16 +120,17 @@ public class Carga {
 	private void inserirEvoluiDe(ArrayList<bdPokemon> listaPokemon, ArrayList<Pokemon> pokemon) throws SQLException{
 		
 		String sql = "UPDATE Pokemon SET evoluiDe = ? WHERE codPokemon = ?";
-		
+
 		for (int i=0; i < listaPokemon.size(); i++) {
 			
 			bdPokemon p = listaPokemon.get(i);
 			Pokemon po = pokemon.get(i);
 			
-			prepare = conn.prepareStatement(sql);			
-			p.setEvoluiDe(getEvoluiDe(po.getEvoluiDe(), pokemon));			
+			prepare = conn.prepareStatement(sql);	
+			listaPokemon.get(i).setEvoluiDe(getEvoluiDe(po.getEvoluiDe(), pokemon));
 			
 			if(p.getEvoluiDe() != 0){
+
 				prepare.setInt(1, p.getEvoluiDe());
 				prepare.setInt(2, p.getCodPokemon());													
 				prepare.executeUpdate();
@@ -140,12 +140,12 @@ public class Carga {
 	}
 	
 	private int getEvoluiDe(String evouiDe,ArrayList<Pokemon> pokemon){
-		
+				
 		for(int i = 0; i < pokemon.size(); i++){
 			
 			Pokemon po = pokemon.get(i);
-			
-			if(evouiDe.equals(po.getNome())){
+
+			if(evouiDe.trim().equals(po.getNome().trim())){				
 				float aux = Float.parseFloat(po.getNumeroPokedex());
 				return (int) aux;
 			}			

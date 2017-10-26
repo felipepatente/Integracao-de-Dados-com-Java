@@ -81,7 +81,18 @@ public class Transformacao {
 			for(int j = 0; j < listaBD.size(); j++){
 				
 				if(listaBD.get(j).getNome().toLowerCase().trim().equals(listaPokemon.get(i).getNome().toLowerCase().trim())){					
-					listaPokemon.get(i).setNumeroPokedex(listaBD.get(j).getNumero());					
+					
+					if(listaPokemon.get(i).getNome().equals("Nidoran")){
+						
+						if(listaPokemon.get(i).getSexo().equals("Macho")){
+							listaPokemon.get(i).setNumeroPokedex("32.0");							
+						}else if(listaPokemon.get(i).getSexo().equals("Femea")){
+							listaPokemon.get(i).setNumeroPokedex("29.0");							
+						}
+						
+					}else{
+						listaPokemon.get(i).setNumeroPokedex(listaBD.get(j).getNumero());
+					}					
 				}				
 			}			
 		}		
