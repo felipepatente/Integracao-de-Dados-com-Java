@@ -10,17 +10,17 @@ public class Pokemon {
 	private String categoria;
 	private String sexo;
 	private String evoluiDe;
-	private double peso;
+	private String peso;
 	private ArrayList<TipoPokemon> tipos;
 	private ArrayList<Fraqueza> fraquezas;
-	private double altura;
+	private String altura;
 	private String habilidade;
 	
 	public Pokemon(){
 		
 	}
 	
-	public Pokemon(String nome, String descricao, double peso, String sexo, String categoria, ArrayList<Fraqueza> fraquezas){
+	public Pokemon(String nome, String descricao, String peso, String sexo, String categoria, ArrayList<Fraqueza> fraquezas){
 		this.nome = nome;
 		this.descricao = descricao;
 		this.peso = peso;
@@ -65,10 +65,10 @@ public class Pokemon {
 	public void setEvoluiDe(String evoluiDe) {
 		this.evoluiDe = evoluiDe;
 	}
-	public double getPeso() {
+	public String getPeso() {
 		return peso;
 	}
-	public void setPeso(double peso) {
+	public void setPeso(String peso) {
 		this.peso = peso;
 	}
 	public ArrayList<TipoPokemon> getTipos() {
@@ -83,10 +83,10 @@ public class Pokemon {
 	public void setFraquezas(ArrayList<Fraqueza> fraquezas) {
 		this.fraquezas = fraquezas;
 	}
-	public double getAltura() {
+	public String getAltura() {
 		return altura;
 	}
-	public void setAltura(double altura) {
+	public void setAltura(String altura) {
 		this.altura = altura;
 	}
 	public String getHabilidade() {
@@ -95,5 +95,4 @@ public class Pokemon {
 	public void setHabilidade(String habilidade) {
 		this.habilidade = habilidade;
 	}
-
 }

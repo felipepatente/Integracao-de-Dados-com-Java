@@ -77,7 +77,7 @@ public class Apresentacao {
 //		carga.inserirHabilidade(listaHabilidade);
 //		carga.inserirSexo(listaSexo);
 //		carga.inserirTipo(listaTipo);
-		carga.inserirPokemon(listaPoke,listaPokemon);
+//		carga.inserirPokemon(listaPoke,listaPokemon);
 //		carga.inserirHabilidadePokemon(listaHabPoke);
 //		carga.inserirFraqueza(listaFraqueza);
 //		carga.inserirTipoPokemon(listaTipoPokemon);
@@ -88,7 +88,7 @@ public class Apresentacao {
 		
 //		trans.inserirPokemon();
 
-		System.out.println("Acabou");
+//		System.out.println("Acabou");
 		
 	}
 
