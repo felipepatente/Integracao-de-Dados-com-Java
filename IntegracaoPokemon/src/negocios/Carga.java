@@ -105,8 +105,8 @@ public class Carga {
 			prepare.setInt(1, p.getCodPokemon());
 			prepare.setString(2, p.getNome());
 			prepare.setString(3, p.getDescricao());
-			prepare.setString(4, p.getAltura());
-			prepare.setString(5, p.getPeso());
+			prepare.setDouble(4, p.getAltura());
+			prepare.setDouble(5, p.getPeso());
 			prepare.setInt(6, p.getSexo());
 			prepare.setInt(7, p.getCodCategoria());										
 			prepare.executeUpdate();

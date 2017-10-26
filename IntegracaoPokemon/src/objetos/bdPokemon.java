@@ -5,8 +5,8 @@ public class bdPokemon {
 	private int codPokemon;
 	private String nome;
 	private String descricao;
-	private String altura;
-	private String peso;
+	private double altura;
+	private double peso;
 	private int sexo;
 	private int codCategoria;
 	private int evoluiDe;
@@ -16,8 +16,8 @@ public class bdPokemon {
 		this.codPokemon = codPokemon;
 		this.nome = nome;
 		this.descricao = descricao;
-		this.altura = altura;
-		this.peso = peso;
+		setAltura(altura);
+		setPeso(peso);		
 		this.sexo = sexo;
 		this.codCategoria = codCategoria;		
 	}
@@ -46,20 +46,20 @@ public class bdPokemon {
 		this.descricao = descricao;
 	}
 
-	public String getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
-	public void setAltura(String altura) {
-		this.altura = altura;
+	public void setAltura(String altura) {	
+		this.altura = Double.parseDouble(altura.replace(",",".").replace(" m",""));
 	}
 
-	public String getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 
 	public void setPeso(String peso) {
-		this.peso = peso;
+		this.peso = Double.parseDouble(peso.replace(",",".").replace(" Kg",""));		
 	}
 
 	public int getSexo() {
