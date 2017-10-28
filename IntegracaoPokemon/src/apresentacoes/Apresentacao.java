@@ -86,7 +86,7 @@ public class Apresentacao {
 //			System.out.println(i + " - " + listaPokemon.get(i).getNumeroPokedex() + " - " + listaPokemon.get(i).getNome());								
 //		}
 		
-//		trans.inserirPokemon();
+		trans.inserirPokemon();
 
 		System.out.println("Acabou");
 		

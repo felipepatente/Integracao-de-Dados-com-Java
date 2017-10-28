@@ -45,15 +45,14 @@ public class Carga {
 	
 	public void inserirHabilidade(ArrayList<Habilidade> listaHabilidade) throws SQLException{
 		
-		String sql = "INSERT INTO Habilidade (nmHabilidade,descricao)"
-				+ " VALUES(?,?);";	
+		String sql = "INSERT INTO Habilidade (nmHabilidade)"
+				+ " VALUES(?);";	
 		
 		for (int i=0; i< listaHabilidade.size(); i++) {
 			
 			Habilidade h = listaHabilidade.get(i);		
 			prepare = conn.prepareStatement(sql);			
-			prepare.setString(1, h.getNmHabilidade());
-			prepare.setString(2, h.getDescricao());
+			prepare.setString(1, h.getNmHabilidade());			
 			prepare.executeUpdate();
 			
 		}
